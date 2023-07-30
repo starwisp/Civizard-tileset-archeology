@@ -70,9 +70,9 @@ As a proof of concept, I played a couple of turns which produced terrain tiles i
 
 Retroarch: https://www.retroarch.com/
 
-![cd3b768e-5c91e29a](https://user-images.githubusercontent.com/81810020/175182604-57f0e645-5790-4a06-a2ae-26927eadf4cd.png)  
-![cd3b768e-6f24d07b](https://user-images.githubusercontent.com/81810020/175182637-b6844d63-a0a3-4cbf-b584-63e17280a058.png)  
-![cd3b768e-5d14f602](https://user-images.githubusercontent.com/81810020/175182613-c45047ef-7774-4b75-841b-e155921c549b.png)  
+![cd3b768e-5c91e29a](https://user-images.githubusercontent.com/81810020/175182604-57f0e645-5790-4a06-a2ae-26927eadf4cd.png)  <img src="https://user-images.githubusercontent.com/81810020/175182604-57f0e645-5790-4a06-a2ae-26927eadf4cd.png" alt="drawing" width="200"/>
+![cd3b768e-6f24d07b](https://user-images.githubusercontent.com/81810020/175182637-b6844d63-a0a3-4cbf-b584-63e17280a058.png)  <img src="https://user-images.githubusercontent.com/81810020/175182637-b6844d63-a0a3-4cbf-b584-63e17280a058.png" alt="drawing" width="200"/>
+![cd3b768e-5d14f602](https://user-images.githubusercontent.com/81810020/175182613-c45047ef-7774-4b75-841b-e155921c549b.png)  <img src="https://user-images.githubusercontent.com/81810020/175182613-c45047ef-7774-4b75-841b-e155921c549b.png" alt="drawing" width="200"/>
 
 <b>Single shore terrain tiles, which seem to be part of an animation.</b>
 
