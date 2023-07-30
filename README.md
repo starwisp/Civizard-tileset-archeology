@@ -1,6 +1,7 @@
 # Civizard tileset archeology ...  
-## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress; may change with new information and corrections)   
-[Starwisp](https://github.com/starwisp)  
+## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress; may change with new information and corrections)    
+collected by [Starwisp](https://github.com/starwisp)  
+
 'Civizard - Majutsu no Keifu' is a turn-based fantasy strategy game published by Asmik Ace Entertainment for the PSX and released exclusively in Japan in 1997. It is the Japanese port of Master of Magic (Simtex, MicroProse) released for DOS PCs in 1994 to the rest of the world. 
 What makes Civizard an intriguing case is that Asmik put much work into this port. The most obvious things they changed are parts the tileset, the camera viewpoint (tilted worldmap, almost isometric as opposed to the top-down view in MoM for DOS PC), and the UI/controls (adapted for using a PSX controller). 
 
