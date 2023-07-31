@@ -268,6 +268,7 @@ While searching through no$psx savestates of Civizard for clues to the tiles and
 It is probably bitwise but it's obvious that 01 is a topright corner, 02 a bottom right one, 04 a bottom left, 08 a top left, etc. (see pic below).  
 ![fow2](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/bbd9ef48-3673-48c5-8888-68abc6e79274)  
 <b>Visibility bubble large</b>  
+0F being the "fully visible" index, then just fill everything with 0Fs and load it.
 
 
 #### 6.3. Civizard music tracks - an alternate version of the Master of Magic tracks
