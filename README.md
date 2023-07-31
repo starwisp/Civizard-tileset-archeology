@@ -297,10 +297,11 @@ In binary:
 0F = 1111  
 
 ![fow3](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e)
-<b>Numbers represent fog patterns</b> 
+<b>Numbers represent fog patterns</b>  
+
 For example: Empty cells are 00 . There is a logic here - think of the bits as like checkboxes
 ![corner state of checkboxes for FoW](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193)
-<b>Numbers represent fog patterns; arrows represent corner</b> 
+<b>Numbers represent fog patterns; arrows represent corner</b>  
 
 
 
