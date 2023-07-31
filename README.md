@@ -243,7 +243,7 @@ GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
 
 <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b> 
 _________
-### 6. Future ideas and miscellanious side ventures
+### 6. Future ideas and miscellaneous side ventures
 #### 6.1. Get terrain tiles and their names via savestate hex edit
 A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He has allowed me to use his explanation of this method (the pictures are also his):
 "The game has to store the map (the game's logical structure for the playfield) in memory during gameplay. It may be possible to modify a savestate via hex editor in a way that the game map displays a sequential set of tiles. The game is forced to display the tile numbers we want. Then we would screenshot or dump the tiles from VRAM.
