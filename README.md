@@ -311,8 +311,8 @@ byte 0F is 1111 in binary, so all corners are "set" so to speak.
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
 
 #### 6.3. Sequential tile injection 
-As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it.  
-
+As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it. There is a method for finding a CLUT that hinges these principles but it only works on a savestate basis. But it would take too much space to discuss in detail here. A tutorial for this can be found in section "Further Information" ("Tutorial - How to find PSX palettes").  
+ 
 Opening a no$psx savestate in a hexeditor and searching around shows the following: 
 ![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
 <b>Game map in memory snapshot of no$psx</b>     
