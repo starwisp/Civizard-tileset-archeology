@@ -269,7 +269,8 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
 ![fow2](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/bbd9ef48-3673-48c5-8888-68abc6e79274)  
 <b>Visibility bubble large</b>  
 0F being the "fully visible" index, then just fill everything with 0Fs and load it.
-
+![fow3](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e)
+<b>Fog of war lifted</b>  
 
 #### 6.3. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
