@@ -236,7 +236,8 @@ GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
 <b>Extracted tileset - black areas and pixel-shifted, viewed in 'TiledGGD-PE-'</b>
    
-![Pixels shifted 8 pixel columns horizontally 1 pixel vertically](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/05b3b492-e62d-4ea9-a722-5c24fb686e2f)
+![Pixels shifted 8 pixel columns horizontally 1 pixel vertically](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e)
+
 
 
 <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b> 
