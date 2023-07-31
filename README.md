@@ -322,7 +322,7 @@ The the area of visibility (no fog of war) could be located by using that repres
 ![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
 <b>array of sequential words copy pasted on game map</b>   
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="300"/> 
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="300"/>  
 <b>Game shows a sequential number of tiles in no$psx</b>  
 
 
