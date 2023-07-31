@@ -242,7 +242,7 @@ GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
 
 <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b> 
 _________
-### 6. Future ideas
+### 6. Future ideas and miscellanious side ventures
 #### 6.1. Get terrain tiles and their names via savestate hex edit
 A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He has allowed me to use his explanation of this method (the pictures are also his):
 "The game has to store the map (the game's logical structure for the playfield) in memory during gameplay. It may be possible to modify a savestate via hex editor in a way that the game map displays a sequential set of tiles. The game is forced to display the tile numbers we want. Then we would screenshot or dump the tiles from VRAM.
@@ -260,7 +260,17 @@ I wonder if one could also get the number/name of every terrain tile in this way
 
 HxD Hex Editor: https://mh-nexus.de/en/hxd/
 
-#### 6.2. Civizard music tracks - an alternate version of the Master of Magic tracks
+#### 6.2. Uncovering the fog of war/game map.
+While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a nice discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.
+![visibility bubble at start of a new game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34)
+<b>Visibility bubble at start of a new game</b>  
+
+It is probably bitwise but it's obvious that 01 is a topright corner, 02 a bottom right one, 04 a bottom left, 08 a top left, etc. (see pic below).
+![fow2](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/bbd9ef48-3673-48c5-8888-68abc6e79274)
+<b>Visibility bubble large</b>  
+
+
+#### 6.3. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
 They can be read and exported with the tool jpsxdec. 
 
