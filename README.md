@@ -301,13 +301,14 @@ In binary:
 
 For example: Empty cells are 00 . There is a logic here - think of the bits as like checkboxes
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193" alt="drawing" width="300"/>    
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193" alt="drawing" width="300"/>   
+
 <b>Numbers represent fog patterns; Arrows represent corners</b>   
 
 One bit represents one corner state. Think of bit 0 as "fogged" and bit 1 as "shown". 
 byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog map that is 00 is fogged. 
 byte 0F is 1111 in binary, so all corners are "set" so to speak.  
-Example: 0E is the cornerpiece in the bottom left of the spotlight, and unsurprisingly it has only one bit as 0.  
+Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
 
 
 #### 6.3. Civizard music tracks - an alternate version of the Master of Magic tracks
