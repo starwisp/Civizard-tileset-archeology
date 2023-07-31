@@ -1,6 +1,7 @@
 # Civizard tileset archeology ...  
 ## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress; may change with new information and corrections)    
-Authors: [Starwisp](https://github.com/starwisp); [vervalkon](https://github.com/vervalkon)  
+Authors: [Starwisp](https://github.com/starwisp);
+[vervalkon](https://github.com/vervalkon)  
 
 'Civizard - Majutsu no Keifu' is a turn-based fantasy strategy game published by Asmik Ace Entertainment for the PSX and released exclusively in Japan in 1997. It is the Japanese port of Master of Magic (Simtex, MicroProse) released for DOS PCs in 1994 to the rest of the world. 
 What makes Civizard an intriguing case is that Asmik put much work into this port. The most obvious things they changed are parts the tileset, the camera viewpoint (tilted worldmap, almost isometric as opposed to the top-down view in MoM for DOS PC), and the UI/controls (adapted for using a PSX controller). 
@@ -256,7 +257,7 @@ So I know from past experience that there is a copy of the level kept in RAM for
 ![Hexedit to display sequential tiles](https://user-images.githubusercontent.com/81810020/175755200-b13bcadb-5086-454a-b076-8dd5559c1475.png)
 <b>After savestate is edited, it displays the expected tiles</b>
  
-I wonder if one could also get the number/name of every terrain tile in this way. Unfortunately I know too little in this area to do this or how feasible this would be. We would probably have to know more information on the Civizard save states and find the tilemap data. He suggested to try with 'GGD'. I thought this method is worth being documented.
+I wonder if one could also get the number/name of every terrain tile in this way. Unfortunately I know too little in this area to do this or how feasible this would be. We would probably have to know more information on the Civizard save states and find the tilemap data. He suggested to try with 'GGD'.
 
 HxD Hex Editor: https://mh-nexus.de/en/hxd/
 
