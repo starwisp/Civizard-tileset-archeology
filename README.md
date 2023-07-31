@@ -317,6 +317,11 @@ Opening a no$psx savestate in a hexeditor and searching around shows the followi
 ![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
 <b>Game map in memory snapshot of no$psx</b>     
 
+A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" where the where Neo can see the world in green numbers and symbols).
+The the area of visibility (no fog of war) could be located by using that representation of the map. A an array of sequential words was pasted onto that area.
+![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
+<b>array of sequential words copy pasted on game map</b>     
+
 
 
 #### 6.4. Civizard music tracks - an alternate version of the Master of Magic tracks
