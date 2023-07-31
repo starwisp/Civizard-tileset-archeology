@@ -275,7 +275,7 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
 <b>Fog of war lifted</b>  
 
 Explanation:
-The fog of war map is a 2-dimensional array that's of unknown size - I just pasted a good amount of 0Fs over the 00s. If I had written too little, it all wouldn't be visible, if I had written too much, I might've overwritten some other important data.
+The fog of war map/visibility map is a 2-dimensional array that's of unknown size - I just pasted a good amount of 0Fs over the 00s. If I had written too little, it all wouldn't be visible, if I had written too much, I might've overwritten some other important data.
 Before a frame is shown, the game reads the map data and draws the full map. Once it has drawn the full map, it reads the fog data from RAM and draws the fog over it. I knows what kind of a fog pattern to make by reading the area around the 1FEC6C range (not 100% sure of the precise address). 
 It determines the fog status likely by reading bits.
 In binary:
@@ -310,8 +310,14 @@ byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog
 byte 0F is 1111 in binary, so all corners are "set" so to speak.  
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
 
+#### 6.3. Sequential tile injection 
+As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it.  
+![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
+<b>Game map in memory snapshot of no$psx</b>     
 
-#### 6.3. Civizard music tracks - an alternate version of the Master of Magic tracks
+
+
+#### 6.4. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
 They can be read and exported with the tool jpsxdec. 
 
