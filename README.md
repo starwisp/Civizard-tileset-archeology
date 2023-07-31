@@ -1,5 +1,5 @@
 # Civizard tileset archeology ...  
-## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress; may change with new information and corrections)    
+## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress; bound to change)    
 Authors: [Starwisp](https://github.com/starwisp);
 [vervalkon](https://github.com/vervalkon)  
 
