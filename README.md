@@ -301,7 +301,7 @@ In binary:
 
 For example: Empty cells are 00 . There is a logic here - think of the bits as like checkboxes
 ![corner state of checkboxes for FoW](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193)  
-<b>Numbers represent fog patterns; arrows represent corner</b>  
+<b>Numbers represent fog patterns; arrows represent corner</b>  <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193" alt="drawing" width="200"/>
 
 
 
