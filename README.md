@@ -218,9 +218,7 @@ Using this method, it was not possible to find out the terrain tiles' correct or
 The suspicious files from world0.bmf and world1.bmf were indeed each 4 files with the image data for terrain tiles and 4 files with corresponding palette information (so one .BMF file for Arcanus and one for Myror). Now we have to find the correct pairs of image data files and palette files. The dumps from the PSX VRAM were not in vain since in theory they might be used to verify the correct palette file <-> data file pairs. I have not been able to do that for all files since I could only match one pair with one VRAM dump so far (see below).
 
 ![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
-<b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>
-
-<!-- ??? Delete later ????  vervalkon said this is the wrong clut... he only sent the appropriate ones, the others are for UI elements and so on, ???but all of the cluts are in VRAM that'S why they get dumped...??? If it is already in VRAM in this clut, then it looks like some tiles of this clut have to be used. . Correct: For example the mountains are used on the Myror map. ???? -->
+<b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
 #### 5.4. Problems with the decompressed terrain tiles and where we are at with this project 
 + The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. 
