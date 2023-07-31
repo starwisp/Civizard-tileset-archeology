@@ -312,6 +312,8 @@ Example: 0E is the cornerpiece in the bottom left of the spotlight of the initia
 
 #### 6.3. Sequential tile injection 
 As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it.  
+
+Opening a no$psx savestate in a hexeditor and searching around shows the following: 
 ![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
 <b>Game map in memory snapshot of no$psx</b>     
 
