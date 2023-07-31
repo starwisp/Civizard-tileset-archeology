@@ -319,11 +319,13 @@ Opening a no$psx savestate in a hexeditor and searching around shows the followi
 
 A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" where the where Neo can see the world in green numbers and symbols).
 The the area of visibility (no fog of war) could be located by using that representation of the map. A an array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. From the picture below you can see this works.  
+
 ![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
 <b>array of sequential words copy pasted on game map</b>   
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="300"/>  
-<b>Game shows a sequential number of tiles in no$psx</b>  
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="400"/>   
+
+<b>Game shows a sequential number of tiles in no$psx</b>   
 
 
 
