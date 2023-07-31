@@ -278,5 +278,5 @@ _________
 + "Master of Magic Fans" Discord channel https://discord.gg/69qMbHtV
 + "Realms Beyond" Master of Magic forum https://www.realmsbeyond.net
 + Primer on the creation of gameshark cheat codes using "Retroarch" https://docs.libretro.com/guides/cheat-codes/
-+ Video on theoretical background of the decompressor script using a similar case as example (Tomba 2 for PSX) https://www.youtube.com/watch?v=LASE8IiGB9Q
++ Theoretical background of the decompressor script using a similar case as example by [vervalkon](https://github.com/vervalkon) https://www.youtube.com/watch?v=LASE8IiGB9Q
 + Video on decompression for the psx game Tomba 2 by [vervalkon](https://github.com/vervalkon) https://www.youtube.com/watch?v=f6Vh9b1Kiw8
