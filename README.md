@@ -261,16 +261,48 @@ I wonder if one could also get the number/name of every terrain tile in this way
 HxD Hex Editor: https://mh-nexus.de/en/hxd/
 
 #### 6.2. Uncovering the fog of war/game map.
-While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a nice discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.
+While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a nice discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.  
+
 ![visibility bubble at start of a new game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34)
 <b>Visibility bubble at start of a new game</b>  
 
 It is probably bitwise but it's obvious that 01 is a topright corner, 02 a bottom right one, 04 a bottom left, 08 a top left, etc. (see pic below).  
 ![fow2](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/bbd9ef48-3673-48c5-8888-68abc6e79274)  
 <b>Visibility bubble large</b>  
+
 0F being the "fully visible" index, then just fill everything with 0Fs and load it.
 ![fow3](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e)
 <b>Fog of war lifted</b>  
+
+Explanation:
+The fog of war map is a 2-dimensional array that's of unknown size - I just pasted a good amount of 0Fs over the 00s. If I had written too little, it all wouldn't be visible, if I had written too much, I might've overwritten some other important data.
+Before a frame is shown, the game reads the map data and draws the full map. Once it has drawn the full map, it reads the fog data from RAM and draws the fog over it. I knows what kind of a fog pattern to make by reading the area around the 1FEC6C range (not 100% sure of the precise address). 
+It determines the fog status likely by reading bits.
+In binary:
+00 = 0000  
+01 = 0001  
+02 = 0010  
+03 = 0011  
+04 = 0100  
+05 = 0101  
+06 = 0110  
+07 = 0111  
+08 = 1000  
+09 = 1001  
+0A = 1010  
+0B = 1011  
+0C = 1100  
+0D = 1101  
+0E = 1110  
+0F = 1111  
+
+![fow3](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e)
+<b>Numbers represent fog patterns</b> 
+For example: Empty cells are 00 . There is a logic here - think of the bits as like checkboxes
+![corner state of checkboxes for FoW](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193)
+<b>Numbers represent fog patterns; arrows represent corner</b> 
+
+
 
 #### 6.3. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
