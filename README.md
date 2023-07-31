@@ -253,15 +253,30 @@ So I know from past experience that there is a copy of the level kept in RAM for
 ![Hex edit save state to display tiles in sequential order](https://user-images.githubusercontent.com/81810020/175755182-c1f58aec-5823-4efc-8531-6460e6ab1560.png)  
 <b>Savestate in HxD</b>  
  
-"When I load that save state in, then move away from the area and come back, I get my tiles."
+After loading the savestate into the emulator after modification the player needs to jump away from and back to the screen. Then the game displays the manipulated tiles.
 ![Hexedit to display sequential tiles](https://user-images.githubusercontent.com/81810020/175755200-b13bcadb-5086-454a-b076-8dd5559c1475.png)
-<b>After savestate is edited, it displays the expected tiles</b>
+<b>After savestate is edited, it displays the expected tiles</b>  
+
+HxD Hex Editor: https://mh-nexus.de/en/hxd/  
+
+#### 6.2. Sequential tile injection 
+As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it. There is a method for finding a CLUT that hinges these principles but it only works on a savestate basis. But it would take too much space to discuss in detail here. A tutorial for this can be found in section "Further Information" ("Tutorial - How to find PSX palettes").  
  
-I wonder if one could also get the number/name of every terrain tile in this way. Unfortunately I know too little in this area to do this or how feasible this would be. We would probably have to know more information on the Civizard save states and find the tilemap data. He suggested to try with 'GGD'.
+Opening a no$psx savestate in a hexeditor and searching around shows the following: 
+![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
+<b>Game map in memory snapshot of no$psx</b>     
 
-HxD Hex Editor: https://mh-nexus.de/en/hxd/
+A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" where the where Neo can see the world in green numbers and symbols).
+The the area of visibility (no fog of war) could be located by using that representation of the map. A an array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. From the picture below you can see this works.  
 
-#### 6.2. Uncovering the fog of war/game map.
+![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
+<b>Array of sequential words copy pasted on game map</b>   
+
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="400"/>   
+
+<b>Game shows a sequential number of tiles in no$psx</b>   
+
+#### 6.3. Uncovering the fog of war/game map.
 While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a nice discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.  
 
 ![visibility bubble at start of a new game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34)
@@ -310,25 +325,6 @@ One bit represents one corner state. Think of bit 0 as "fogged" and bit 1 as "sh
 byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog map that is 00 is fogged. 
 byte 0F is 1111 in binary, so all corners are "set" so to speak.  
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
-
-#### 6.3. Sequential tile injection 
-As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it. There is a method for finding a CLUT that hinges these principles but it only works on a savestate basis. But it would take too much space to discuss in detail here. A tutorial for this can be found in section "Further Information" ("Tutorial - How to find PSX palettes").  
- 
-Opening a no$psx savestate in a hexeditor and searching around shows the following: 
-![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
-<b>Game map in memory snapshot of no$psx</b>     
-
-A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" where the where Neo can see the world in green numbers and symbols).
-The the area of visibility (no fog of war) could be located by using that representation of the map. A an array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. From the picture below you can see this works.  
-
-![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
-<b>Array of sequential words copy pasted on game map</b>   
-
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="400"/>   
-
-<b>Game shows a sequential number of tiles in no$psx</b>   
-
-
 
 
 
