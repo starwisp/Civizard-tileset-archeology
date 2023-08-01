@@ -184,7 +184,7 @@ Example: If we open 00010384.bin.out as the graphics data file and 00001104.bin 
 
 
 ![Graphics data and palette data in ggd ](https://user-images.githubusercontent.com/81810020/175851165-8cd09d3e-f0a3-413c-bf5b-483f83711e2a.png)  
-<b>Graphics data and palette data loaded into 'GGD'; note black border in palette window</b>
+<b>Graphics data and palette data from files in world0.bmf loaded into 'GGD'; note black border in palette window</b>
 
 
 
