@@ -268,7 +268,7 @@ A representation of the game map can be seen in the hex editor (think of that sc
 The the area of visibility (no fog of war) could be located by using that representation of the map.  
 
 ![map tile injection](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c56fa732-8150-4f97-99e1-05301af97452)  
-<b>Game area of visibility<b>   
+<b>Game area of visibility</b>   
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/1e4ee23b-7144-4953-92c0-902135698f6a" alt="drawing" width="300"/>  
 
