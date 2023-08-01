@@ -258,7 +258,7 @@ Explanation:
 ??? this is being actively worked on right now ...
 _________
 ### 6. Future ideas and miscellaneous side ventures
-#### 6.1. Get terrain tiles and their names via savestate hex edit
+#### 6.1. Alternative method: Getting terrain tiles, their names amd CLUTs via savestate hex edit
 A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He pointed me to the method and has allowed me to use his explanation (the pictures are also his):
 "The game has to store the map (the game's logical structure for the playfield) in memory during gameplay. It may be possible to modify a savestate via hex editor in a way that the game map displays a sequential set of tiles. The game is forced to display the tile numbers we want. Then we would screenshot or dump the tiles from VRAM.
 Example: This is Kid Chameleon for Genesis, but it could apply to multiple platforms, if the level data is stored in a similar way.
@@ -274,7 +274,7 @@ After loading the savestate into the emulator after modification the player need
 HxD Hex Editor: https://mh-nexus.de/en/hxd/  
 
 #### 6.2. Sequential tile injection...  
-...or manipulating the game into showing the terrain tiles in sequential order.    
+...or manipulating the game into showing us the terrain tiles and additional information.     
 As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an emulator), locate the visible game map and replace the names of tiles with a sequential number, in order to have the game map display a sequential set of tiles. Every tile comes in a multitude of CLUTS/palettes but has only one correct CLUT. This way one could find the CLUT of the tiles used ingame and later possibly the logic behind it. There is a method for finding a CLUT that hinges these principles but it only works on a savestate basis. But it would take too much space to discuss in detail here. A tutorial for this can be found in section "Further Information" ("Tutorial - How to find PSX palettes").  
  
 Opening a no$psx savestate in a hexeditor and searching around shows the following: 
@@ -296,7 +296,7 @@ The the area of visibility (no fog of war) could be located by using that repres
 
 <b>Area of visibility from picture above corresponds roughly to this location</b>  
 
-An array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. Savestate was saved in the editor and loaded back into no$psx. The manipulated area now displays the tiles by their internal number in sequential order. The terrain tiles could be grabbed or dumped from there in the correct CLUT and order.  
+An array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. Savestate was saved in the editor and loaded back into no$psx. The manipulated area now displays the tiles by their internal name in sequential order. The terrain tiles could be grabbed or dumped from there in the correct CLUT and order.  
 
 ![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
 <b>Array of sequential words copy pasted on game map</b>   
