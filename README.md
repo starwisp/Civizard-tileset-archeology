@@ -190,15 +190,12 @@ Example: If we open 00010384.bin.out as the graphics data file and 00001104.bin 
 <b>Same part of the terrain tileset from world0.bmf as in picture directly above, different CLUT, and in 'TiledGGD-PE-'; different CLUTS can be selected in the palette window on the right. There is no correct CLUT for all tiles of a subset at the same time. It is set by the game on a per tile basis.</b>  
 
 
-
-
-If you see that the first set of tiles look perfect in a certain palette, you could check the other tiles in GGD for good measure and if all other tiles look bad except the first bunch, you could export those and not worry about that particular clut (or tiles) anymore. It is a game of deduction. You need to identify as many palettes as required for every tile to look alright. Every tile has an intended palette, so if you end up with a number of image files and see that one palette has correct colors for some tiles but incorrect colors for other tiles and another palette has correct colors for some tiles but incorrect colors for other tiles, etc., then you will eventually end up with a set of tiles in the correct color. <!-- "I think only 00010384.bin.out CLUT 5 picture offset 0x0 looks correct" -->
+If you see that the first set of tiles look perfect in a certain palette, you could check the other tiles in GGD for good measure and if all other tiles look bad except the first bunch, you could export those and not worry about that particular clut (or tiles) anymore. It is a game of deduction. You need to identify as many palettes as required for every tile to look alright. Every tile has an intended palette, so if you end up with a number of image files and see that one palette has correct colors for some tiles but incorrect colors for other tiles and another palette has correct colors for some tiles but incorrect colors for other tiles, etc., then you will eventually end up with a set of tiles in the correct color. <!-- "I think only 00010384.bin.out CLUT 5 picture offset 0x0 looks correct" -->  
 
 A big thank you to [vervalkon](https://github.com/vervalkon). Without his expertise, work and patience we would not be where we are now.  
 
-
 No$PSX emulator: https://problemkaputt.de/psx.htm  
-GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
+GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip  
 
 _________
 ### 5. Results
@@ -342,7 +339,7 @@ One bit represents one corner state. Think of bit 0 as "fogged" and bit 1 as "sh
 byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog map that is 00 is fogged. 
 byte 0F is 1111 in binary, so all corners are "set" so to speak.  
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
-
+ 
 #### 6.4. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
 They can be read and exported with the tool jpsxdec. 
