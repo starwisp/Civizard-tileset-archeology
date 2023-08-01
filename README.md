@@ -286,7 +286,7 @@ Opening a no$psx savestate in a hexeditor and searching around shows the followi
 </p>
 
 
-A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" where the where Neo can see the world in green code/symbols).
+A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" when Neo can see the world in green code/symbols).
 The the area of visibility (no fog of war) could be located by using that representation of the map.  
 
 ![map tile injection](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c56fa732-8150-4f97-99e1-05301af97452)  
