@@ -35,7 +35,7 @@ PSX-vram: https://wiki.vg-resource.com/PSX-vram
 
 <figure>
 <img src="https://user-images.githubusercontent.com/81810020/175168117-b0ba2e44-c094-45ef-9e9a-a67701add634.png">  
-<figcaption> <b>VRAM viewer in No$PSX emulator. You can see different pages of the tileset loaded in VRAM. Clicking on a tile in the game screen will point to the corresponding page in VRAM.</b></figcaption>
+<figcaption> <b>VRAM viewer in No$PSX emulator. Pages of the tileset in VRAM. Clicking on tile in game screen points to corresponding page in VRAM.</b></figcaption>
 </figure>  
 
 No$PSX emulator: https://problemkaputt.de/psx.htm  
