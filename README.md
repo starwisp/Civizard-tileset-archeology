@@ -243,7 +243,7 @@ GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
 _________
 ### 6. Future ideas and miscellaneous side ventures
 #### 6.1. Get terrain tiles and their names via savestate hex edit
-A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He has allowed me to use his explanation of this method (the pictures are also his):
+A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He pointed me to the method and has allowed me to use his explanation (the pictures are also his):
 "The game has to store the map (the game's logical structure for the playfield) in memory during gameplay. It may be possible to modify a savestate via hex editor in a way that the game map displays a sequential set of tiles. The game is forced to display the tile numbers we want. Then we would screenshot or dump the tiles from VRAM.
 Example: This is Kid Chameleon for Genesis, but it could apply to multiple platforms, if the level data is stored in a similar way.
 So I know from past experience that there is a copy of the level kept in RAM for Kid Chameleon, so I grabbed a savestate. I went to the address in the save state where the that copy is kept. I also happen to know that the game stores the level data in two bytes, one for the platform type and the other for the graphical tile. So I updated the graphical tiles $00 to $0F in a hex editor."  
