@@ -1,7 +1,7 @@
 # Civizard tileset archeology ...  
 ## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress; bound to change)    
 Authors: [Starwisp](https://github.com/starwisp);
-[vervalkon](https://github.com/vervalkon)  
+[vervalkon](https://github.com/vervalkon)
 
 'Civizard - Majutsu no Keifu' is a turn-based fantasy strategy game published by Asmik Ace Entertainment for the PSX and released exclusively in Japan in 1997. It is the Japanese port of Master of Magic (Simtex, MicroProse) released for DOS PCs in 1994 to the rest of the world. 
 What makes Civizard an intriguing case is that Asmik put much work into this port. The most obvious things they changed are parts the tileset, the camera viewpoint (tilted worldmap, almost isometric as opposed to the top-down view in MoM for DOS PC), and the UI/controls (adapted for using a PSX controller). 
@@ -89,8 +89,7 @@ Retroarch: https://www.retroarch.com/
  <b>Page of tiles from VRAM in 2 different palettes (CLUTS).</b>
 _________
 ### 4. Decompressing the datafiles
-Dumping tiles from PSX VRAM yielded a number of tiles. Nevertheless, it is unclear if all tiles could be obtained and unlikely that their structure/order in the datafiles could be found out this way. Nevertheless, some information on the tileset may probably be inferred from the PC version. 
-Meanwhile, [vervalkon](https://github.com/vervalkon) took a deeper look at the datafiles. 
+Dumping tiles from PSX VRAM yielded a number of tiles. Nevertheless, it is unclear if all tiles could be obtained and unlikely that their structure/order in the datafiles could be found out this way. Nevertheless, some information on the tileset may probably be inferred from the PC version.  
 
 #### 4.1. Decompressing all the tiles except the terrain tiles  
 [vervalkon](https://github.com/vervalkon) suspected that the parts of the *.BMF files that were not viewable by TIM viewers were using some kind of compression. He very generously wrote a Python script to scan for and decompress image data in *.BMF files that cannot be read by standard TIM viewers. It is able to decompress most of the graphics data files of the game, and he also ended up with some suspicious files from world0.bmf and world1.bmf. Since we could not find the terrain tiles yet, and their file names were self-explanatory, we suspected them to contain the terrain tiles with one file for Arcanus and one file for Myror. See his decompressor Python script in this repository. Also see the videos on the theoretical background of the decompressor in the section "Further Information" at the end of this document.  
