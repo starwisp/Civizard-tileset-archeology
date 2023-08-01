@@ -25,15 +25,19 @@ Epsxe emulator: https://www.epsxe.com
 7zip: https://www.7-zip.org    
 PVV ('PlayStation VRAM Viewer'): https://www.romhacking.net/utilities/675    
 PSX-vram: https://wiki.vg-resource.com/PSX-vram  
-
-![PVV](https://user-images.githubusercontent.com/81810020/175167706-0ece0100-85cf-4000-afa0-31d439fb6369.JPG)  
-<b> Unzipped savestate loaded into 'PVV'.</b>
+<figure>
+<img src="https://user-images.githubusercontent.com/81810020/175167706-0ece0100-85cf-4000-afa0-31d439fb6369.JPG"
+<figcaption><b> Unzipped savestate loaded into 'PVV'.</b></figcaption>  
+</figure>  
 
 #### 2.2. Live view of the PSX VRAM
 'No$PSX' emulator/debugger has a nice live VRAM view (thanks [vervalkon](https://github.com/vervalkon) for the tip). It enables us to inspect the terrain tiles while the game is running. Unfortunately, 'No$PSX' is not able to dump textures directly but one could take a screenshot and use a graphics editor on the little window on the bottom right. This is not very practical either but at least that way it is possible to see the terrain tiles in VRAM. 
 
-![VRAM viewer in No$PSX](https://user-images.githubusercontent.com/81810020/175168117-b0ba2e44-c094-45ef-9e9a-a67701add634.png)  
-<b>VRAM viewer in No$PSX emulator. You can see different pages of the tileset loaded in VRAM. Clicking on a tile in the game screen will point to the corresponding page in VRAM.</b>  
+<figure>
+<img src="https://user-images.githubusercontent.com/81810020/175168117-b0ba2e44-c094-45ef-9e9a-a67701add634.png">  
+
+<figcaption> <b>VRAM viewer in No$PSX emulator. You can see different pages of the tileset loaded in VRAM. Clicking on a tile in the game screen will point to the corresponding page in VRAM.</b></figcaption>
+</figure>  
 
 No$PSX emulator: https://problemkaputt.de/psx.htm  
 _________
