@@ -302,7 +302,7 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
 <b>Fog of war lifted</b>  
 
 Explanation:
-The fog of war map/visibility map is a 2-dimensional array that's of unknown size - I just pasted a good amount of 0Fs over the 00s. If I had written too little, it all wouldn't be visible, if I had written too much, I might've overwritten some other important data.
+The fog of war map/visibility map is a 2-dimensional array that is of unknown size - a "good amount" of 0Fs was pasted over the 00s. If the amount was too small, it all would not be visible, if it was too large, some other important data might have been overwritten.
 Before a frame is shown, the game reads the map data and draws the full map. Once it has drawn the full map, it reads the fog data from RAM and draws the fog over it. I knows what kind of a fog pattern to make by reading the area around the 1FEC6C range (not 100% sure of the precise address). 
 It determines the fog status likely by reading bits.
 In binary:
