@@ -146,12 +146,12 @@ The Civizard tilesets are embedded within *.bmf containers in the standard PSX *
 
 4.3.1. Some *.bmf containers can be directly read by *.tim viewers and do not seem to be compressed such as  wizard.bmf, for example, which contains the images for wizard portraits and some UI elements.
 ![tim2view merlin](https://user-images.githubusercontent.com/81810020/177438248-fdf4d1b5-006c-4e15-8a47-9300c689640f.JPG)  
-<b>Wizards.bmf in Tim2View</b>
+<b>Wizards.bmf in 'Tim2View'.</b>
 
 4.3.2. Some *.bmf containers are not accessible by *.tim viewers or other software that was tested. These are either compressed or have compressed portions. They can be decompressed by comparing the compressed datafiles with the decompressed files in RAM and subtracting everything that was different. The substracted parts are most probably commands for repetition and the like. See videos on decompression of PSX graphics data in section "Further Information". Also see the decompressor script in the repository. 
 
 ![m7](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b4d7d425-c309-4da1-8173-7425b3004670)  
-<b>Decompressed /Monst/7/182.bmf, previously not accessible with *.tim viewers</b>   
+<b>Decompressed /Monst/7/182.bmf, previously not accessible with *.tim viewers.</b>   
 
 4.3.3. 
 The world0.bmf and world1.bmf container files contain each: One normal *.tim file (with icons for important landmarks, see picture below), four large .bin files and four small .bin files. The small files are too small for the terrain graphics data, so it could be deduced that they might be palettes. The larger files were then suspected to be the graphics data files. Searching PSX VRAM for the bytes of the first few pixels from the datafiles was successful and proved the files were indeed the right ones and that they decompressed correctly. 
@@ -166,7 +166,7 @@ The end result of having four palette files and four graphic files suggests that
 <b>*.tim file of extracted from world0.bmf in tim2view; there are 7 CLUTS/palettes that can be chosen via the menu down right; it contains landmarks like cities, mana nodes, etc. .</b>
   
 ![World0 color coded](https://user-images.githubusercontent.com/81810020/175849605-f104c7f4-8c81-4133-8e0e-e3c8e40fe64b.JPG)  
-<b>Files extracted from world0.bmf, color coded: green - palettes, purple - graphics</b>  
+<b>Files extracted from world0.bmf, color coded: green - palettes, purple - graphics.</b>  
 
 
 Tileset data can be merged with palette data using 'TiledGGD-PE-' in order to export a tileset in a specific palette as follows: 
