@@ -189,7 +189,7 @@ Example: If we open 00010384.bin.out as the graphics data file and 00001104.bin 
 
 
 
-Vervalkon's advice: "If you see that the first set of tiles look perfect in a certain palette, you could check the other tiles in GGD for good measure and if all other tiles look bad except the first bunch, you could export those and not worry about that particular clut (or tiles) anymore. It is a game of deduction. You need to identify as many palettes as required for every tile to look alright. Every tile has an intended palette, so if you end up with a number of image files and see that one palette has correct colors for some tiles but incorrect colors for other tiles and another palette has correct colors for some tiles but incorrect colors for other tiles, etc., then you will eventually end up with a set of tiles in the correct color." <!-- "I think only 00010384.bin.out CLUT 5 picture offset 0x0 looks correct" -->
+If you see that the first set of tiles look perfect in a certain palette, you could check the other tiles in GGD for good measure and if all other tiles look bad except the first bunch, you could export those and not worry about that particular clut (or tiles) anymore. It is a game of deduction. You need to identify as many palettes as required for every tile to look alright. Every tile has an intended palette, so if you end up with a number of image files and see that one palette has correct colors for some tiles but incorrect colors for other tiles and another palette has correct colors for some tiles but incorrect colors for other tiles, etc., then you will eventually end up with a set of tiles in the correct color. <!-- "I think only 00010384.bin.out CLUT 5 picture offset 0x0 looks correct" -->
 
 A big thank you to [vervalkon](https://github.com/vervalkon). Without his expertise, work and patience we would not be where we are now.  
 
@@ -208,8 +208,8 @@ Combining the suspected palette bin files with the larger graphics bin data file
 
 Explanation:
 ??? It turned out the Python script linked in this github repo cannot unpack the terrain tiles correctly. The script seems to be an older version.
-??? His comment on this after sending the decompressed files samples: "when i did the initial unpacking, my code wasn't smart enough to understand to decompress those files so this is a quick 'n dirty hackjob i did — that zip contains the world0 and world1 folders but with the appropriate files decompressed" 
-??? this is being actively worked on now ...
+??? His comment on this after sending the decompressed files samples: "when i did the initial unpacking, my code wasn't smart enough to understand to decompress those files so this is a quick 'n dirty hackjob i did -- here the world0 and world1 folders but with the appropriate files decompressed" 
+??? this is being actively worked on right now ...
 _________
 ### 5. Results
 In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles, that will need some more work and trial and error (see discussion in 5.4). An some speculation on how to proceed from here. Advice and help would be appreciated.
