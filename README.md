@@ -55,7 +55,7 @@ In the section above we can see the active tileset in VRAM and we have a savesta
 
 ##### 3.1.1. 'Texmod' + 'epsxe' PSX emulator
 This resulted in sheets with tiles in different palettes. As a proof of concept, I played a couple of turns and it filled up one sheet of terrain tiles and also produced sheets with UI elements and the like.
-Usage: Execute texmod.exe first and point it to the path of epsxe.exe and launch 'epsxe' through that menu (thanks @R7CrazyCanucks of DYKG Discord channel for pointing me to texmod).  
+Usage: Execute texmod.exe first and point it to the path of epsxe.exe and launch 'epsxe' through that menu (thanks @R7CrazyCanucks of DYKG Discord channel for pointing me to 'texmod').  
   
 Texmod: https://www.moddb.com/downloads/texmod4  
 Epsxe emulator: https://www.epsxe.com  
@@ -64,7 +64,7 @@ Epsxe emulator: https://www.epsxe.com
 ![epsxe plus texmod Myror](https://user-images.githubusercontent.com/81810020/175172161-ab56ad70-cf0c-4a43-b2d5-3596a29ab676.JPG)  
 <b>'Epsxe' emulator with 'texmod' running. The grid highlights boundaries of terrain textures.</b>
 
-Due to the PSX using palettized tilesets, we get every tileset in multiple palettes (Sony called palettes "Color Lookup Tables" or CLUTS). To produce a picture, the PSX uses only a couple "correct" tiles of every one of the differently colored tileset variations (palettes/CLUTs). 
+Due to the PSX using palettized tilesets, we get every tileset in multiple palettes (Sony called palettes "Color Lookup Tables" or CLUTs). To produce a picture, the PSX uses only a couple "correct" tiles of every one of the differently colored tileset variations (palettes/CLUTs). 
 
 ![EPSXE EXE_0x39F8CAE1](https://user-images.githubusercontent.com/81810020/175177070-a88a1542-d2cc-4470-b88b-ebfa0c4fb6b1.png)
 ![EPSXE EXE_0x8FD183D3](https://user-images.githubusercontent.com/81810020/175176695-09f26973-92b1-449d-a6ac-302d85046aba.png)  
