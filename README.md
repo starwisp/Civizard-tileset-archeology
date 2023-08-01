@@ -39,6 +39,7 @@ PSX-vram: https://wiki.vg-resource.com/PSX-vram
 <figcaption> <b>VRAM viewer in No$PSX emulator. You can see different pages of the tileset loaded in VRAM. Clicking on a tile in the game screen will point to the corresponding page in VRAM.</b></figcaption>
 </figure>  
 
+
 No$PSX emulator: https://problemkaputt.de/psx.htm  
 _________
 ### 3. Dumping textures from VRAM
