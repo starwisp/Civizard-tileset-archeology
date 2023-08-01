@@ -221,10 +221,12 @@ In the following I will summarize what we have achieved so far. There are a few 
 *.Tim files are standard PSX image containers and can be read and exported to standard formats by a standard TIM viewer such as 'TIM2View' and suspicious *.bin files that unknown chunks of data. 
 Feeding the the TIM files into a TIM viewer gives you all the sprites, UI elements etc. in all palettes (or CLUTs as they are also called in PSX viewers). With Tim2View or Yu_Ri PSX file viewer/converter, they can be converted to PNGs or BMPs with or without transparency. For a full tileset you would have to make sure to also convert them in all the palettes. These tools unfortunately do not automatically do this. They also do not automatically export them into appropriately named subfolders but into one folder and seemingly randomly numbered files. The game logic most probably knows what to do with the numbering though. 
 #### 5.2. It is possible to obtain some terrain tiles from VRAM. 
-Using this method, it was not possible to find out the terrain tiles' correct order and naming scheme in the terrain data containers, their correct palettes, or if we have all of them. This is probably handled by the executable.
-We may try to do that next.
+Using this method, it was not possible to find out the terrain tiles' correct order and naming scheme in the terrain data containers, their correct palettes, or if we have all of them. This is probably handled by the executable. We may try to do that next.  
 #### 5.3. It is possible to decompress world0.bmf and world1.bmf into binary files consisting of terrain tile image data plus their palette information - but with problems
-The suspicious files from world0.bmf and world1.bmf were indeed each 4 files with the image data for terrain tiles and 4 files with corresponding palette information (so one .BMF file for Arcanus and one for Myror). Now we have to find the correct pairs of image data files and palette files. The dumps from the PSX VRAM were not in vain since in theory they might be used to verify the correct palette file <-> data file pairs. I have not been able to do that for all files yet.
+The suspicious files from world0.bmf and world1.bmf were indeed each 4 files with the image data for terrain tiles and 4 files with corresponding palette information (so one .BMF file for Arcanus and one for Myror). Now we have to find the correct pairs of image data files and palette files. 
+
+
+The dumps from the PSX VRAM were not in vain since in theory they might be used to verify the correct palette file <-> data file pairs. I have not been able to do that for all files yet.
 
 ![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
@@ -233,6 +235,9 @@ The suspicious files from world0.bmf and world1.bmf were indeed each 4 files wit
 <B>+!!! Just skip this part. We think we know the problem. The decompressor doesn't pad correctly.</b>  
 + The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. 
 + I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.
+![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)
+<b>Possible hints for the internal CLUT handling of the game</b>    
+  
 + Some of the image data were pixel shifted in one or two directions. One tileset looked good. This may be rectified by using the image data offset function in editors like 'GGD' or 'TiledGGD-PE-'. The problem here is that I have not found an editor that can apply this offset, fuse image files and palette files, and save the whole set at once with all the settings needed. It will work in increments of a couple of tiles in 'GGD' but then you would somehow have to put the set back together afterwards. 
 + The last tile in some of tileset files seems to have a couple of pixels missing, probably an artefact of the script.
 + There were areas with no tiles/black areas in every terrain tileset (see picture below). I have no idea if these are supposed to be there or if they are some kind of corruption.
