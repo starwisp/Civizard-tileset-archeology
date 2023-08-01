@@ -187,7 +187,7 @@ Example: If we open 00010384.bin.out as the graphics data file and 00001104.bin 
 <b>Graphics data and palette data from files in world0.bmf loaded into 'GGD'; note black border in palette window</b>  
 
 ![Part of the Terrain tileset world 0](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b3488afd-ef5c-4e05-9cbb-96791764654a)
-<b>Same part of the terrain tileset from world0.bmf as in picture directly above but in 'TiledGGD-PE-'; different CLUTS can be selected in the palette window on the right. There is no correct CLUT for all tiles of a subset at the same time. It is set by the game on a per tile basis.</b>  
+<b>Same part of the terrain tileset from world0.bmf as in picture directly above, different CLUT, and in 'TiledGGD-PE-'; different CLUTS can be selected in the palette window on the right. There is no correct CLUT for all tiles of a subset at the same time. It is set by the game on a per tile basis.</b>  
 
 
 
