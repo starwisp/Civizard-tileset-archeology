@@ -305,6 +305,7 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
 ![fow2](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/bbd9ef48-3673-48c5-8888-68abc6e79274)  
 <b>Visibility bubble large</b>  
 
+
 0F being the "fully visible" index, then just fill everything with 0Fs and load it.  
 
 
@@ -312,13 +313,14 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
   <img alt="Fow 3" src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e">
   <br>
     <b>Fog of war lifted</b>
-</p> 
+</p>  
+
 
 Explanation:
 The fog of war map/visibility map is a 2-dimensional array that is of unknown size - a "good amount" of 0Fs was pasted over the 00s. If the amount was too small, it all would not be visible, if it was too large, some other important data might have been overwritten.
 Before a frame is shown, the game reads the map data and draws the full map. Once it has drawn the full map, it reads the fog data from RAM and draws the fog over it. I knows what kind of a fog pattern to make by reading the area around the 1FEC6C range (not 100% sure of the precise address). 
 It determines the fog status likely by reading bits.
-In binary:
+In binary:  
 00 = 0000  
 01 = 0001  
 02 = 0010  
@@ -336,8 +338,6 @@ In binary:
 0E = 1110  
 0F = 1111  
 
-![fow3](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e)
-<b>Numbers represent fog patterns</b>  
 
 For example: Empty cells are 00 . There is a logic here - think of the bits as like checkboxes
 
