@@ -305,7 +305,8 @@ An array of sequential words was pasted onto that area editing the map to displa
 
 <b>Game shows a sequential number of tiles in the correct CLUTs in no$psx</b>  
 
-#### 6.3. Uncovering the fog of war/game map.
+#### 6.3. Uncovering the fog of war/game map... 
+...or had I known that earlier.
 While searching through no$psx savestates of Civizard for clues to the terrain tiles, their associated CLUTS and the possible location of the game map for sequential tile injection [vervalkon](https://github.com/vervalkon) discovered the "visibility map". Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. Positions with 00 appear to be unseen, and that small bubble of different numbers showng below is the visibility map in the beginning of a new map/game.  
 
 <p align="center">
