@@ -270,7 +270,8 @@ The the area of visibility (no fog of war) could be located by using that repres
 <b>Game area of visibility<b>    
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/1e4ee23b-7144-4953-92c0-902135698f6a" alt="drawing" width="300"/>   
-<b>Visible area corresponds roughly to this location<b>  
+
+<b>Area of visibility from picture above corresponds roughly to this location<b>  
 
 A an array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. From the picture below you can see this works.  
 
