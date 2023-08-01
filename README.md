@@ -257,7 +257,7 @@ Explanation:
 ??? His comment on this after sending the decompressed files samples: "when i did the initial unpacking, my code wasn't smart enough to understand to decompress those files so this is a quick 'n dirty hackjob i did -- here the world0 and world1 folders but with the appropriate files decompressed" 
 ??? this is being actively worked on right now ...
 _________
-### 6. Further experiments and miscellaneous side ventures
+### 6. Further experiments and miscellaneous side ventures (may expand in time)
 #### 6.1. Alternative method: Getting terrain tiles, their names amd CLUTs via savestate hex edit
 A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He pointed me to the method and has allowed me to use his explanation (the pictures are also his):
 "The game has to store the map (the game's logical structure for the playfield) in memory during gameplay. It may be possible to modify a savestate via hex editor in a way that the game map displays a sequential set of tiles. The game is forced to display the tile numbers we want. Then we would screenshot or dump the tiles from VRAM.
