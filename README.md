@@ -295,16 +295,24 @@ An array of sequential words was pasted onto that area editing the map to displa
 #### 6.3. Uncovering the fog of war/game map.
 While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.  
 
-![visibility bubble at start of a new game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34)
-<b>Visibility bubble at start of a new game</b>  
+<p align="center">
+  <img alt="game map" src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34">
+  <br>
+    <b>Visibility bubble at start of a new game</b>
+</p>  
 
 It is probably bitwise but it's obvious that 01 is a topright corner, 02 a bottom right one, 04 a bottom left, 08 a top left, etc. (see pic below).  
 ![fow2](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/bbd9ef48-3673-48c5-8888-68abc6e79274)  
 <b>Visibility bubble large</b>  
 
-0F being the "fully visible" index, then just fill everything with 0Fs and load it.
-![fow3](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e)
-<b>Fog of war lifted</b>  
+0F being the "fully visible" index, then just fill everything with 0Fs and load it.  
+
+
+<p align="center">
+  <img alt="Fow 3" src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e">
+  <br>
+    <b>Fog of war lifted</b>
+</p> 
 
 Explanation:
 The fog of war map/visibility map is a 2-dimensional array that is of unknown size - a "good amount" of 0Fs was pasted over the 00s. If the amount was too small, it all would not be visible, if it was too large, some other important data might have been overwritten.
