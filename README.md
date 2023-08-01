@@ -316,32 +316,12 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
 
 Explanation:
 The fog of war map/visibility map is a 2-dimensional array that is of unknown size - a "good amount" of 0Fs was pasted over the 00s. If the amount was too small, it all would not be visible, if it was too large, some other important data might have been overwritten.
-Before a frame is shown, the game reads the map data and draws the full map. Once it has drawn the full map, it reads the fog data from RAM and draws the fog over it. I knows what kind of a fog pattern to make by reading the area around the 1FEC6C range (not 100% sure of the precise address). 
-It determines the fog status likely by reading bits.  
-
-Possible values in binary:  
-00 = 0000  
-01 = 0001  
-02 = 0010  
-03 = 0011  
-04 = 0100  
-05 = 0101  
-06 = 0110  
-07 = 0111  
-08 = 1000  
-09 = 1001  
-0A = 1010  
-0B = 1011  
-0C = 1100  
-0D = 1101  
-0E = 1110  
-0F = 1111  
-
-Example: Empty cells are 00. There is a logic here - think of the bits as checkboxes that determine the fog patterns as shown in the picture below.
+Before a frame is shown, the game reads the map data and draws the full map. Once it has drawn the full map, it reads the fog data from RAM and draws the fog over it. It knows what kind of a fog pattern to make by reading the area around the 1FEC6C range (not 100% sure of the precise address). It determines the fog status likely by reading bits. Possible values are in binary.
+Example: Empty cells are 00. There is a logic here - think of the bits as checkboxes that determine the fog patterns as shown in the picture below.  
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193" alt="drawing" width="300"/>   
 
-<b>Numbers represent fog patterns; arrows represent corners.</b>   
+<b>Possible values in binary; Numbers represent fog patterns; Arrows represent corners.</b>   
 
 One bit represents one corner state. Think of bit 0 as "fogged" and bit 1 as "shown". 
 byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog map that is 00 is fogged. 
