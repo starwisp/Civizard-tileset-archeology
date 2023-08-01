@@ -273,7 +273,7 @@ The the area of visibility (no fog of war) could be located by using that repres
 
 <b>Area of visibility from picture above corresponds roughly to this location<b>  
 
-An array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. From the picture below you can see this works.  
+An array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. Savestate was saved in the editor and loaded back into no$psx. The manipulated area now displays the tiles by their internal number in sequential order.  
 
 ![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
 <b>Array of sequential words copy pasted on game map</b>    
