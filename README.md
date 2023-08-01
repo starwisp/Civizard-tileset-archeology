@@ -6,7 +6,7 @@ Authors: [Starwisp](https://github.com/starwisp);
 'Civizard - Majutsu no Keifu' is a turn-based fantasy strategy game published by Asmik Ace Entertainment for the PSX and released exclusively in Japan in 1997. It is the Japanese port of Master of Magic (Simtex, MicroProse) released for DOS PCs in 1994 to the rest of the world. 
 What makes Civizard an intriguing case is that Asmik put much work into this port. The most obvious things they changed are parts the tileset, the camera viewpoint (tilted worldmap, almost isometric as opposed to the top-down view in MoM for DOS PC), and the UI/controls (adapted for using a PSX controller). 
 
-Civizard's distinctive terrain tileset makes it interesting to the Master of Magic modding community for use in Master of Magic mods. In this article I will describe different approaches and techniques that were attempted to get to the complete tileset including, most importantly, the terrain tiles. Fortunately, experts at the "DYKG / Do you know Gaming" Discord channel provided much advice and help. This is a summary I initially started writing for myself in order to document what was explained to me, what I tested out and what people helped me with, in case it may be of use to someone later. I hope there are not too many technical misunderstandings or mistakes.
+Civizard's distinctive terrain tileset makes it interesting to the Master of Magic modding community for use in Master of Magic mods. In this article I will describe different approaches and techniques that were attempted to get to the complete tileset including, most importantly, the terrain tiles. Fortunately, experts at the "DYKG / Do you know Gaming" Discord channel provided much advice and help. This is a summary I initially started writing for myself in order to document what was explained to me, what I tested out and what people helped me with, in case it may be of use to someone later. I hope there are not too many technical misunderstandings or mistakes.   
 _________
 ### 1. Extracting pictures from the *.BMF files via standard file viewers
 Graphics data files in Civizard are in *.BMF containers with compressed and/or uncompressed *.TIM graphics files inside. *.TIM files are a standard PSX picture format.  
@@ -156,7 +156,7 @@ The Civizard tilesets are embedded within *.bmf containers in the standard PSX *
 4.3.3. 
 The world0.bmf and world1.bmf container files contain each: One normal *.tim file (with icons for important landmarks, see picture below), four large .bin files and four small .bin files. The small files are too small for the terrain graphics data, so it could be deduced that they might be palettes. The larger files were then suspected to be the graphics data files. Searching PSX VRAM for the bytes of the first few pixels from the datafiles was successful and proved the files were indeed the right ones and that they decompressed correctly. 
 The end result of having four palette files and four graphic files suggests that one graphics file belongs to one palette file but there is also the chance that more than one *.bin file uses the same palette file. Which ones belong together is guesswork. Most probably the ones that produce at least one correct tile from the game. This is where the VRAM dumps of chapter 3 may come in handy for comparison.
-'GGD' or 'TiledGGD-PE-' can be used for combining the graphics data files and palette files. The difference is that 'TiledGGD -PE-' is able to save a full tileset in one action (menu option "save all graphics"), while GGD saves only the visible panel.
+'GGD' or 'TiledGGD-PE-' can be used for combining the graphics data files and palette files. The difference is that 'TiledGGD -PE-' is able to save a full tileset in one action (menu option "save all graphics"), while 'GGD' saves only the visible panel.
 
 
 ![The first few pixels here were searched in the datafiles](https://user-images.githubusercontent.com/81810020/175845801-618c6d18-d470-49b1-9361-d7380dde8676.png)    
@@ -215,7 +215,7 @@ Explanation:
 ??? this is being actively worked on right now ...
 _________
 ### 5. Results
-In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that were harder to get to. (see discussion in 5.4). Some speculation on how to proceed from here.
+In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that were harder to get to. (see discussion in 5.4). Some speculation on how to proceed from here. Advice and additional information is always welcome.
 
 #### 5.1. It is possible to obtain most probably all the tileset's tiles as *.TIM files via a Python decompression script excluding the terrain tiles. 
 *.Tim files are standard PSX image containers and can be read and exported to standard formats by a standard TIM viewer such as 'TIM2View' and suspicious *.bin files that unknown chunks of data. 
@@ -237,7 +237,7 @@ The suspicious files from world0.bmf and world1.bmf were indeed each 4 files wit
 + The last tile in some of tileset files seems to have a couple of pixels missing, probably an artefact of the script.
 + There were areas with no tiles/black areas in every terrain tileset (see picture below). I have no idea if these are supposed to be there or if they are some kind of corruption.
 + Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. 
-Within the world0 and world1 output directory we ended up with files with image data and files with palette data. The palette files can be read and reunited with the image data with the tools 'TiledGGD-PE-' or 'GGD'. In this case, 'TiledGGD-PE' was used. Which image data file goes with which palette file and if some files use the same palette file will be guesswork.
+Within the world0 and world1 output directory we ended up with files with image data and files with palette data. The palette files can be read and reunited with the image data with the tools 'TiledGGD-PE-' or 'GGD'. In this case, 'TiledGGD-PE' was used. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we also already started looking into the CLUT handling of the executable.
 
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-   
 GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip  
