@@ -292,7 +292,7 @@ An array of sequential words was pasted onto that area editing the map to displa
 <b>Game shows a sequential number of tiles in no$psx</b>  
 
 #### 6.3. Uncovering the fog of war/game map.
-While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.  
+While searching through no$psx savestates of Civizard for clues to the terrain tiles, their associated CLUTS and the possible location of the game map for sequential tile injection [vervalkon](https://github.com/vervalkon) discovered the "visibility map". Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. Positions with 00 appear to be unseen, and that small bubble of different numbers showng below is the visibility map in the beginning of a new map/game.  
 
 <p align="center">
   <img alt="game map" src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34">
@@ -305,7 +305,7 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
 <b>Visibility bubble large</b>  
 
 
-0F being the "fully visible" index, then just fill everything with 0Fs and load it.  
+As can be inferred by comparing the emulator view to the visibility map, 0F must be the "fully visible" index. To uncover the full map, one just has to fill everything in this area with 0Fs and load it back in the emulator.  
 
 
 <p align="center">
