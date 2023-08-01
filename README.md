@@ -221,9 +221,9 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 
 
 <ins><b>!!!! Dear reader, 5.4 is obsolete. Please skip this part to section 6. We think we know the problem. The decompressor doesn't pad correctly. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
-#### 5.4. Problems with the decompressed terrain tiles and where we are at with this project  
+#### 5.4. Problems with the decompressed terrain tiles and further ideas WIP 
 
-+ The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. 
++ The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. The "names" should be handled internally by the Civizard executable.  
 + I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
 
 ![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
