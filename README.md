@@ -262,25 +262,27 @@ As proposed in 6.1., if one would modify a savestate (aka memory snapshot of an 
  
 Opening a no$psx savestate in a hexeditor and searching around shows the following: 
 ![game map in memory snapshot](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/cb390db8-1f01-4f51-868c-3961dedb0fbb)  
-<b>Game map in memory snapshot of no$psx</b>        
+<b>Game map in memory snapshot of no$psx</b>  
 
 A representation of the game map can be seen in the hex editor (think of that scene in "The Matrix" where the where Neo can see the world in green code/symbols).
 The the area of visibility (no fog of war) could be located by using that representation of the map.  
+
 ![map tile injection](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c56fa732-8150-4f97-99e1-05301af97452)  
-<b>Game area of visibility<b>    
+<b>Game area of visibility<b>   
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/1e4ee23b-7144-4953-92c0-902135698f6a" alt="drawing" width="300"/>   
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/1e4ee23b-7144-4953-92c0-902135698f6a" alt="drawing" width="300"/>  
 
-<b>Area of visibility from picture above corresponds roughly to this location<b>  
+<b>Area of visibility from picture above corresponds roughly to this location<b>   
 
 An array of sequential words was pasted onto that area editing the map to display tiles from 00 onwards instead of what the original tiles are. Savestate was saved in the editor and loaded back into no$psx. The manipulated area now displays the tiles by their internal number in sequential order.  
 
 ![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
-<b>Array of sequential words copy pasted on game map</b>    
+<b>Array of sequential words copy pasted on game map</b>   
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="400"/>   
 
-<b>Game shows a sequential number of tiles in no$psx</b>   
+<b>Game shows a sequential number of tiles in no$psx</b>  
+
 
 #### 6.3. Uncovering the fog of war/game map.
 While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.  
