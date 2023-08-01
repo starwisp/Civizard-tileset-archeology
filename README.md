@@ -254,11 +254,11 @@ Combining the suspected palette bin files with the larger graphics bin data file
 
 Explanation:
 ??? It turned out the Python script linked in this github repo cannot unpack the terrain tiles correctly. The script seems to be an older version.
-??? His comment on this after sending the decompressed files samples: "when i did the initial unpacking, my code wasn't smart enough to understand to decompress those files so this is a quick 'n dirty hackjob i did -- here the world0 and world1 folders but with the appropriate files decompressed" 
+??? his comment"when i did the initial unpacking, my code wasn't smart enough to understand to decompress those files so this is a quick 'n dirty hackjob i did -- here the world0 and world1 folders but with the appropriate files decompressed" 
 ??? this is being actively worked on right now ...
 _________
 ### 6. Further experiments and ideas (may expand in time)
-#### 6.1. Alternative method: Getting terrain tiles, their names amd CLUTs via savestate hex edit
+#### 6.1. Alternative method: Getting terrain tiles, their names and CLUTs via savestate hex edit
 A big thank you to @darkwolf at DYKG Discord channel for suggesting this. He pointed me to the method and has allowed me to use his explanation (the pictures are also his):
 "The game has to store the map (the game's logical structure for the playfield) in memory during gameplay. It may be possible to modify a savestate via hex editor in a way that the game map displays a sequential set of tiles. The game is forced to display the tile numbers we want. Then we would screenshot or dump the tiles from VRAM.
 Example: This is Kid Chameleon for Genesis, but it could apply to multiple platforms, if the level data is stored in a similar way.
