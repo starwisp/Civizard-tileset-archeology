@@ -231,8 +231,9 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 ![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
-#### 5.4. Problems with the decompressed terrain tiles and where we are at with this project 
-<B>+!!! Just skip this part. We think we know the problem. The decompressor doesn't pad correctly. At this point this is to keep track of different leads we are following right now</b>  
+<B>Dear reader that is not collaborating. Please skip this part to section 6. We think we know the problem. The decompressor doesn't pad correctly. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.</b>  
+#### 5.4. Problems with the decompressed terrain tiles and where we are at with this project  
+
 + The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. 
 + I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
 
