@@ -35,12 +35,10 @@ PSX-vram: https://wiki.vg-resource.com/PSX-vram
 
 <figure>
 <img src="https://user-images.githubusercontent.com/81810020/175168117-b0ba2e44-c094-45ef-9e9a-a67701add634.png">  
-
 <figcaption> <b>VRAM viewer in No$PSX emulator. You can see different pages of the tileset loaded in VRAM. Clicking on a tile in the game screen will point to the corresponding page in VRAM.</b></figcaption>  
-</figure>  
+</figure>   
 
-
-No$PSX emulator: https://problemkaputt.de/psx.htm  
+  No$PSX emulator: https://problemkaputt.de/psx.htm  
 _________
 ### 3. Dumping textures from VRAM
 Drawback of dumping textures from VRAM: The terrain tiles seem to get dumped one after the other in the order they are called by the game as you play - not the full set as is the case with other tiles such as units. So someone would have to uncover a full map of both worlds and probably could still not be sure if they covered all the tiles. I tried it anyway to see if we get any further this way. 
