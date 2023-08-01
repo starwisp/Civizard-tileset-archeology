@@ -291,7 +291,6 @@ An array of sequential words was pasted onto that area editing the map to displa
 
 <b>Game shows a sequential number of tiles in no$psx</b>  
 
-
 #### 6.3. Uncovering the fog of war/game map.
 While searching through no$psx savestates of Civizard for clues to the tiles and how to apply the principles of 6.1. [vervalkon](https://github.com/vervalkon) made a discovery. Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. 00 appears to be unseen, and that small bubble is the visibility map in the beginning of a new map/game.  
 
@@ -314,7 +313,6 @@ It is probably bitwise but it's obvious that 01 is a topright corner, 02 a botto
   <br>
     <b>Fog of war lifted</b>
 </p>  
-
 
 Explanation:
 The fog of war map/visibility map is a 2-dimensional array that is of unknown size - a "good amount" of 0Fs was pasted over the 00s. If the amount was too small, it all would not be visible, if it was too large, some other important data might have been overwritten.
@@ -339,19 +337,16 @@ Possible values in binary:
 0E = 1110  
 0F = 1111  
 
-
-For example: Empty cells are 00 . There is a logic here - think of the bits as checkboxes that determine the fog patterns as shown in the picture below.
+Example: Empty cells are 00. There is a logic here - think of the bits as checkboxes that determine the fog patterns as shown in the picture below.
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/3d027068-df2b-4d63-88a4-e14b606d5193" alt="drawing" width="300"/>   
 
-<b>Numbers represent fog patterns; Arrows represent corners</b>   
+<b>Numbers represent fog patterns; arrows represent corners.</b>   
 
 One bit represents one corner state. Think of bit 0 as "fogged" and bit 1 as "shown". 
 byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog map that is 00 is fogged. 
 byte 0F is 1111 in binary, so all corners are "set" so to speak.  
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
-
-
 
 #### 6.4. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
