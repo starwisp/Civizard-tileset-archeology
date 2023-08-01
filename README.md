@@ -35,8 +35,8 @@ PSX-vram: https://wiki.vg-resource.com/PSX-vram
 
 <figure>
 <img src="https://user-images.githubusercontent.com/81810020/175168117-b0ba2e44-c094-45ef-9e9a-a67701add634.png">  
-<figcaption> <b>VRAM viewer in No$PSX emulator. Pages of the tileset in VRAM. Clicking on tile in game screen points to corresponding page in VRAM.</b>  </figcaption>
-</figure>  
+<figcaption> <b>VRAM viewer in No$PSX emulator. Pages of the tileset in VRAM. Clicking on tile in game screen points to corresponding page in VRAM.</b></figcaption>
+</figure>   
 
 No$PSX emulator: https://problemkaputt.de/psx.htm  
 _________
@@ -80,7 +80,7 @@ Retroarch: https://www.retroarch.com/
 ![cd3b768e-6f24d07b](https://user-images.githubusercontent.com/81810020/175182637-b6844d63-a0a3-4cbf-b584-63e17280a058.png)  <img src="https://user-images.githubusercontent.com/81810020/175182637-b6844d63-a0a3-4cbf-b584-63e17280a058.png" alt="drawing" width="200"/>
 ![cd3b768e-5d14f602](https://user-images.githubusercontent.com/81810020/175182613-c45047ef-7774-4b75-841b-e155921c549b.png)  <img src="https://user-images.githubusercontent.com/81810020/175182613-c45047ef-7774-4b75-841b-e155921c549b.png" alt="drawing" width="200"/>
 
-<b>Single shore terrain tiles, which seem to be part of an animation.</b>
+<b>Single shore terrain tiles, which seem to be part of an animation. Original size tiles next to enlarged versions</b>
 
 
 
