@@ -336,7 +336,7 @@ They can be read and exported with the tool jpsxdec.
 jpsxdec: https://github.com/m35/jpsxdec
 _________
 ### Acknowledgments
-[vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on master of magic).
+[vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
 _________
 ### Disclaimer 
 The contents of this repository are for educational use only. Use at your own risk. The game, all its game assets and the game's IP are properties of their respective owners / rights holders. Links are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval.
