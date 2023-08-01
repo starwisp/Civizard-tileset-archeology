@@ -150,8 +150,8 @@ The Civizard tilesets are embedded within *.bmf containers in the standard PSX *
 
 4.3.2. Some *.bmf containers are not accessible by *.tim viewers or other software that was tested. These are either compressed or have compressed portions. They can be decompressed by comparing the compressed datafiles with the decompressed files in RAM and subtracting everything that was different. The substracted parts are most probably commands for repetition and the like. See videos on decompression of PSX graphics data in section "Further Information". Also see the decompressor script in the repository. 
 
-![monst 7 182](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c55ce983-c015-4312-b2cd-58c849abde3a)
-<b>Decompressed /Monst/7/182.bmf, previously not accessible with normal *.tim viewers</b>   
+![m7](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b4d7d425-c309-4da1-8173-7425b3004670)  
+<b>Decompressed /Monst/7/182.bmf, previously not accessible with *.tim viewers</b>   
 
 4.3.3. 
 The world0.bmf and world1.bmf container files contain each: One normal *.tim file (with icons for important landmarks, see picture below), four large .bin files and four small .bin files. The small files are too small for the terrain graphics data, so it could be deduced that they might be palettes. The larger files were then suspected to be the graphics data files. Searching PSX VRAM for the bytes of the first few pixels from the datafiles was successful and proved the files were indeed the right ones and that they decompressed correctly. 
