@@ -189,6 +189,8 @@ Example: If we open 00010384.bin.out as the graphics data file and 00001104.bin 
 ![Part of the Terrain tileset world 0](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b3488afd-ef5c-4e05-9cbb-96791764654a)
 <b>Same part of the terrain tileset from world0.bmf as in picture directly above, different CLUT, and in 'TiledGGD-PE-'; different CLUTS can be selected in the palette window on the right. There is no correct CLUT for all tiles of a subset at the same time. It is set by the game on a per tile basis.</b>  
 
+![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/9b53760a-cbd9-498d-8268-791067f223b4)
+<b>Same subset of tiles in different CLUT, but with correct tiles for this particular CLUT highlighted </b>  
 
 If you see that the first set of tiles look perfect in a certain palette, you could check the other tiles in GGD for good measure and if all other tiles look bad except the first bunch, you could export those and not worry about that particular clut (or tiles) anymore. It is a game of deduction. You need to identify as many palettes as required for every tile to look alright. Every tile has an intended palette, so if you end up with a number of image files and see that one palette has correct colors for some tiles but incorrect colors for other tiles and another palette has correct colors for some tiles but incorrect colors for other tiles, etc., then you will eventually end up with a set of tiles in the correct color. <!-- "I think only 00010384.bin.out CLUT 5 picture offset 0x0 looks correct" -->  
 
