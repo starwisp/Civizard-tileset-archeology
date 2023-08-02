@@ -317,7 +317,7 @@ An array of sequential words was pasted onto that area editing the map to displa
 
 <imgcaption><b>Same as injected tiles from above. In same order, but decompressed from world0.bmf datafiles</b></imgcaption>  
   
-
+The tiles displayed using the manipulated savestate display the tiles in the same order as they are stored in the *.Tims within the worldx.bmf containers (see the 2 images above). Judging from these experiments, the game seems to use sequential numbering for the tiles in the worldx.bmf containers.
 
 #### 6.3. Uncovering the fog of war/game map... 
 ...or had I known that earlier.
