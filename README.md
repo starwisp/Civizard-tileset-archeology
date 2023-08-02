@@ -307,7 +307,7 @@ An array of sequential words was pasted onto that area editing the map to displa
 
 #### 6.3. Uncovering the fog of war/game map... 
 ...or had I known that earlier.
-While searching through no$psx savestates of Civizard for clues to the terrain tiles, their associated CLUTS and the possible location of the game map for sequential tile injection [vervalkon](https://github.com/vervalkon) discovered the "visibility map". Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. Positions with 00 appear to be unseen, and that small bubble of different numbers showng below is the visibility map in the beginning of a new map/game.  
+While searching through no$psx savestates of Civizard for clues to the terrain tiles, their associated CLUTS and the possible location of the game map for sequential tile injection [vervalkon](https://github.com/vervalkon) discovered the "visibility map". Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. Positions with 00 appear to be unseen, and that small bubble of different numbers showing below is the visibility map in the beginning of a new map/game.  
 
 <p align="center">
   <img alt="game map" src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d2dc7a4d-432d-4c44-9fc8-2bde92cd3f34">
