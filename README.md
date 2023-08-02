@@ -248,7 +248,7 @@ GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
 <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b>   
 
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)
-<b>Arrows point to problems: Last tile has some bytes missing (script cut too early?); Black areas could be normal but not sure. </b>  
+<b>Arrows point to problems: Last tile has some bytes missing (script cut too early?); Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
 
 
 ???? Known problems: delete later  - this is being worked on at the moment... for everyone just looking... WIP 
@@ -317,7 +317,7 @@ An array of sequential words was pasted onto that area editing the map to displa
 
 <imgcaption><b>Same as injected tiles from above. In same order, but decompressed from world0.bmf datafiles</b></imgcaption>  
   
-The tiles displayed using the manipulated savestate display the tiles in the same order as they are stored in the *.Tims within the worldx.bmf containers (see the 2 images above). Judging from these experiments, the game seems to use sequential numbering for the tiles in the worldx.bmf containers.
+The tiles displayed using the manipulated savestate display the tiles in the same order as they are stored in the *.Tims within the worldx.bmf containers (see the 2 images above). Judging from these experiments, the game seems to use sequential numbering for the tiles in the worldx.bmf containers. The black area on position 1 in the decompressed terrain datafile occurs in the live game as well on position 1, so we can infer that these black areas may be intentional and are most probably not caused by the decompression script.  
 
 #### 6.3. Uncovering the fog of war/game map... 
 ...or had I known that earlier.
