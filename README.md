@@ -355,12 +355,25 @@ One bit represents one corner state. Think of bit 0 as "fogged" and bit 1 as "sh
 byte 00 (which is 0000 in binary) means fog all corner, thus any byte in the fog map that is 00 is fogged. 
 byte 0F is 1111 in binary, so all corners are "set" so to speak.  
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
+
+#### 6.4. Alternative way of determining the correct CLUT of a tile
+So you have either dumped some sheets from VRAM via the methods in described in section 3 and these sheets are in different CLUTS or you were able to decompress worldx.bmf and are able to select a CLUT from a palette file as described in section 4. Most of these tiles look wrong and the longer you look at these the more unsure you are which CLUT looks "correct". 
+There is a way of determining which CLUT too chose which works for single tiles.
+First start Civizard in No$PSX and start a game or load a game. In the overworld map pause the emulation by clicking on the debugger window (the one with the file menu) and start the VRAM viewer by pushing F5.
+You can see the stopped game, the loaded tilesets, some text on the top right and a little window with small tiles below that on the right.
+Clicking on the "Quadtexraw" in the textwindow will select tiles in the gamewindow. Click through the different "Quadtexraw" lines until the tile you would like to know the palette is marked with a red square in the gamewindow.
+Then the window down right will display how the tilesheet that contains the tile in question should look like (or what it will look like with the correct CLUT/palette for that particular tile).
+
+![finding CLUTs with No$PSX](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d5f4de0e-4732-4fc2-bb3a-f65baa449973)  
+<b>Tile, corresponding "quadtexraw" line and sheet of tiles in the CLUT the tile in question uses</b>     
  
-#### 6.4. Civizard music tracks - an alternate version of the Master of Magic tracks
+#### 6.5. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
 They can be read and exported with the tool jpsxdec. 
 
 jpsxdec: https://github.com/m35/jpsxdec
+
+
 _________
 ### Acknowledgments
 [vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
