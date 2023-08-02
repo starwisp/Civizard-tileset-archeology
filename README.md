@@ -309,7 +309,7 @@ An array of sequential words was pasted onto that area editing the map to displa
 ![sequential words in map](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0828666a-7cea-4afd-b44c-b022332f5fb8)  
 <b>Array of sequential words copy pasted on game map</b>   
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="400"/>   
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e6928318-921c-4240-95e1-a0aa5ac26a0a" alt="drawing" width="500"/>   
 
 <b>Game shows a sequential number of tiles in the correct CLUTs in no$psx</b>  
 
