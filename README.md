@@ -357,8 +357,7 @@ byte 0F is 1111 in binary, so all corners are "set" so to speak.
 Example: 0E is the cornerpiece in the bottom left of the spotlight of the initial map state, and unsurprisingly it has only one bit as 0.  
 
 #### 6.4. Alternative way of determining the correct CLUT of a tile
-So you have either dumped some sheets from VRAM via the methods in described in section 3 and these sheets are in different CLUTS or you were able to decompress worldx.bmf and are able to select a CLUT from a palette file as described in section 4. Most of these tiles look wrong and the longer you look at these the more unsure you are which CLUT looks "correct". 
-There is a way of determining which CLUT too chose which works for single tiles.
+So you have either dumped some sheets from VRAM via the methods in described in section 3 and these sheets are in different CLUTS or you were able to decompress worldx.bmf and are able to select a CLUT from a palette file as described in section 4. Most of these tiles look wrong and the longer you look at these the more unsure you are which CLUT looks "correct". There is a way of determining which CLUT to choose that works for single tiles.   
 First start Civizard in No$PSX and start a game or load a game. In the overworld map pause the emulation by clicking on the debugger window (the one with the file menu) and start the VRAM viewer by pushing F5.
 You can see the stopped game, the loaded tilesets, some text on the top right and a little window with small tiles below that on the right.
 Clicking on the "Quadtexraw" in the textwindow will select tiles in the gamewindow. Click through the different "Quadtexraw" lines until the tile you would like to know the palette is marked with a red square in the gamewindow.
