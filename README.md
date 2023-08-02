@@ -117,7 +117,7 @@ Load script in your preferred Python environment and adjust paths of source fold
 Run script.  
 The script should decrypt most files into *.tim, *.TIM and *.bin files (.tim = decompressed file, .TIM = file was not compressed, .bin = unknown). *.TIM files and *.tim files are essentially the same only that they underwent different treatment by the script (see in script). They can both be loaded into any timviewer/converter (see section 1). Sidenote: In some Windows versions file explorer cannot distinguish between *.TIM and *.tim extensions.
 
-#### 4.2. Finding the world map in PSX RAM (not PSX VRAM)
+#### 4.2. Finding the world map in PSX RAM
 
 After this approach did not yield the terrain tileset, [vervalkon](https://github.com/vervalkon) tried a different approach in searching for the world map, which may have information on the terrain tileset. 
 
