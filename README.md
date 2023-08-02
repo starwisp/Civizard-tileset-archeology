@@ -362,10 +362,14 @@ There is a way of determining which CLUT too chose which works for single tiles.
 First start Civizard in No$PSX and start a game or load a game. In the overworld map pause the emulation by clicking on the debugger window (the one with the file menu) and start the VRAM viewer by pushing F5.
 You can see the stopped game, the loaded tilesets, some text on the top right and a little window with small tiles below that on the right.
 Clicking on the "Quadtexraw" in the textwindow will select tiles in the gamewindow. Click through the different "Quadtexraw" lines until the tile you would like to know the palette is marked with a red square in the gamewindow.
-Then the window down right will display how the tilesheet that contains the tile in question should look like (or what it will look like with the correct CLUT/palette for that particular tile).
+Then the window down right will display how the tilesheet that contains the tile in question should look like (or what it will look like with the correct CLUT/palette for that particular tile). For more information and more technical methods see "Tutorial - How to find PSX palettes" from section "Further information".  
 
 ![finding CLUTs with No$PSX](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d5f4de0e-4732-4fc2-bb3a-f65baa449973)  
 <b>Tile, corresponding "quadtexraw" line and sheet of tiles in the CLUT the tile in question uses</b>     
+
+Clicking through the different palette will get you to this CLUT again:
+![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/9b53760a-cbd9-498d-8268-791067f223b4)
+<b>CLUT identified and correct tile in correct CLUT found</b>  
  
 #### 6.5. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
