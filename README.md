@@ -299,7 +299,7 @@ The area of visibility (no fog of war) could be located by using that representa
 ![map tile injection](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c56fa732-8150-4f97-99e1-05301af97452)  
 <b>Game area of visibility</b>   
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8625df00-bc4b-478e-9bc5-8a6cfb225c9c" alt="drawing" width="300"/>  
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8625df00-bc4b-478e-9bc5-8a6cfb225c9c" alt="drawing" width="400"/>  
 
 
 <b>Area of visibility from picture above corresponds roughly to this location</b>  
