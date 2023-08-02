@@ -319,7 +319,7 @@ An array of sequential words was pasted onto that area editing the map to displa
   
 The tiles displayed using the manipulated savestate display the tiles in the same order as they are stored in the *.Tims within the worldx.bmf containers (see the 2 images above). Judging from these experiments, the game seems to use sequential numbering for the tiles in the worldx.bmf containers. The black area on position 1 in the decompressed terrain datafile occurs in the live game as well on position 1, so we can infer that these black areas may be intentional and are most probably not caused by the decompression script.  
 
-#### 6.3. Uncovering the fog of war/game map... 
+#### 6.3. Uncovering the fog of war/"visibility map"... 
 ...or had I known that earlier.
 While searching through no$psx savestates of Civizard for clues to the terrain tiles, their associated CLUTS and the possible location of the game map for sequential tile injection [vervalkon](https://github.com/vervalkon) discovered the "visibility map". Somewhere around the 0x1FEC60 range onwards there is an array of bytes that determine the fog of war. Positions with 00 appear to be unseen, and that small bubble of different numbers showing below is the visibility map in the beginning of a new map/game.  
 
