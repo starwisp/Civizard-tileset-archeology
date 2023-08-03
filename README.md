@@ -340,7 +340,7 @@ As can be inferred by comparing the emulator view to the visibility map, 0F must
 <p align="center">
   <img alt="Fow 3" src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c737894d-de31-44aa-a2e3-f76325d49b7e">
   <br>
-    <b>Fog of war lifted</b>
+    <b>Fog of war lifted.</b>
 </p>  
 
 Explanation:
@@ -364,9 +364,9 @@ Clicking on "Quadtexraw" in the window will select tiles in the game window. Cli
 Then the window down right will display how the tile sheet that contains the tile in question should look like (or what it will look like with the correct CLUT/palette for that particular tile). For more information and a more in-depth technical method see "Tutorial - How to find PSX palettes" from section "Further information".  
 
 ![finding CLUTs with No$PSX](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d5f4de0e-4732-4fc2-bb3a-f65baa449973)  
-<b>Tile, corresponding "quadtexraw" line and sheet of tiles in the CLUT the tile in question uses</b>     
+<b>Terrain tile, corresponding "quadtexraw" line and sheet of tiles in the CLUT the tile in question uses.</b>     
 
-Clicking through the different palette will get you to this CLUT again:
+Clicking through the different CLUTs (shown as lines of 16 color blocks) on the right will then get you to the right CLUT and the following following familiar image (see section 4.3.3.).
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/9b53760a-cbd9-498d-8268-791067f223b4)
 <b>CLUT identified and correct tile in correct CLUT found</b>  
  
