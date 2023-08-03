@@ -368,7 +368,7 @@ Then the window down right will display how the tile sheet that contains the til
 
 Clicking through the different CLUTs (shown as lines of 16 color blocks) on the right will then get you to the right CLUT and the following following familiar image (see section 4.3.3.).
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/9b53760a-cbd9-498d-8268-791067f223b4)
-<b>CLUT identified and correct tile in correct CLUT found</b>  
+<b>Correct CLUT for group of tiles found.</b>  
  
 #### 6.5. Civizard music tracks - an alternate version of the Master of Magic tracks
 Civizard has the same tracks as Master of Magic DOS but the devs seem to have ran them on a different midi module and recorded them onto the CD. The instruments sound different and provide an interesting alternate version of the iconic tracks to those used for the newer Master of Magic for Windows. Unfortunately the Civizard tracks have a bad echo to them and are distorted at times. In theory, they could be run through some post-processing software and be used in a mod for Master of Magic. But this would be for someone else to try.
