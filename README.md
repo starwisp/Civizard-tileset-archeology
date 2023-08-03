@@ -364,9 +364,9 @@ Clicking on "Quadtexraw" in the window will select tiles in the game window. Cli
 Then the window down right will display how the tile sheet that contains the tile in question should look like (or what it will look like with the correct CLUT/palette for that particular tile). For more information and a more in-depth technical method see "Tutorial - How to find PSX palettes" from section "Further information".  
 
 ![finding CLUTs with No$PSX](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/d5f4de0e-4732-4fc2-bb3a-f65baa449973)  
-<b>Terrain tile, corresponding "quadtexraw" line and sheet of tiles in the CLUT the tile in question uses.</b>     
+<b>Terrain tile, corresponding "QuadTexRaw" line and sheet of tiles in the CLUT the tile in question uses.</b>     
 
-Clicking through the different CLUTs (shown as lines of 16 color blocks) on the right will then get you to the right CLUT and the following following familiar image (see section 4.3.3.).
+Click through the different CLUTs on the right (one line of colored squares is one CLUT, to skip go to next line). This will get you to the right CLUT and to the following following familiar image.
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/9b53760a-cbd9-498d-8268-791067f223b4)
 <b>Correct CLUT for group of tiles found.</b>  
  
