@@ -220,7 +220,7 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 
 
 #### 5.4. UPDATE. Progress with terrain tileset
-I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early.  
+I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' and noticed 'shifting' and 'tearing' and a cut off area at the end of another bin that looked like it was cut off too early.  
 
 <p align="center">
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="500"/>  
@@ -234,11 +234,11 @@ I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing 
 <b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'</b>  
 
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)  
-<b>Arrows point to problems: Last tile has some bytes missing; Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
+<b>Arrows point to problems: Last tile has some bytes missing; black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
 
-While we were brainstorming this, Vervalkon noticed the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra four pixels in its end. 
-Since one tile has 24x24 pixels. that would hint at more tile when combined. If we can combine 2 bins, maybe all 4 bins might be part of one file that was split too early. The trick then was to manually combine all 4 larger bins from world0.bmf and world1.bmf, respectively.
-This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
+While we were brainstorming this, Vervalkon was able to pinpoint the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra 4 pixels in its end. 
+Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) that was split on 2 files during decompression. This shifted the pixels of most files around (also the 24x24 completely black tiles). Since 'TiledGGD-PE-' was set to display that large chunk of grafics data as blocks of 24x24 pixels (the tiles), we ended up with 'shifts'/'tears'. 
+If we can combine 2 bins, maybe all 4 bins might be part of one file that was split at the wrong point. The solution was to manually combine all 4 larger bins from each, world0.bmf and world1.bmf, into one file. This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (@simbey that magic forest is for you ).</b>  
@@ -246,7 +246,6 @@ This got rid of the tearing and shifting in the tiles and left us 2 nicely laid 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
 
 So far this still involves a lot of manual steps. The problem is getting most of this into a script.  
-
 
 
 #### 5.5. Now on to the 4 CLUT files (what are they for?) 
@@ -263,7 +262,7 @@ To be continued...
 
 <ins><b>!!!! Dear reader, 5.4 is obsolete. Please skip this part to section 6. We think we know the problem. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
 #### Problems with the decompressed terrain tiles and further ideas WIP 
-
++ find out why script cuts worldx.bmf tileset data into 4 large bin files.
 + The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. The "names" should be handled internally by the Civizard executable.  
 + I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
 
