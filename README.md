@@ -246,9 +246,6 @@ If we can combine 2 bins, maybe all 4 bins might be part of one file that was sp
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
 
-One problem solved.  
-This still involves a lot of manual steps and knowledge of PSX graphics and the usage of "tiledggd-pe-". Then there is the question why so far we only needed 2 of the 4 palette files and if they may be combined with the rest of the tileset graphics data to make this a regular *.tim graphics file that can be loaded into an editor like most of the other files and thus eliminate the need for 'TiledGGD'. The aim is getting at least some of this automated.  
-
 
 #### 5.5. Now on to the 4 CLUT files (what are they for?) 
 There are 4 different palette files in each the world0.bmf and world1.bmf containers. These are the same palettes for both containers.  
@@ -257,6 +254,11 @@ Many of these tiles look pretty muted compared to their in-game appearance. This
 This is only halfway true: It is the same tile that gets swapped in as different animation phases. Instead, the palettes/CLUTs are getting cycled, which leads to for example the shore wave animations or glow effects in Civizard. This technique is called canvas cycling. See an example for that in further information ('Example of canvas cycling').  
 This is the reason why in the beginning I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.). "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs. 
 Let's see if we can figure out how this works exactly in Civizard.  
+
+
+One problem solved.  
+This still involves a lot of manual steps and knowledge of PSX graphics and the usage of "tiledggd-pe-". The script still cannot deal with the terrain tile containers. Then there is the question why so far we only needed 2 of the 4 palette files and if they may be combined with the rest of the tileset graphics data to make this a regular *.tim graphics file that can be loaded into an editor like most of the other files, thus eliminating the need for 'TiledGGD'. The aim is to automate some parts of this. Until the next one.
+
 To be continued...
 
 
