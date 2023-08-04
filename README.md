@@ -260,6 +260,10 @@ https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b4635be5-
 
 <b>Shore animation. Color cycling in Civizard.</b>   
 
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ed0047bc-3f44-4ffe-9589-73f75a75df8e" alt="drawing" width="550"/>   
+
+<imgcaption><b>Same shore tiles in the data files. Note the muted colors.</b></imgcaption>  
+
 This is the reason why in earlier stages of this project, tiles with animation phases of waves could be dumped from VRAM (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
 Let's see if we can figure out how this works in Civizard. It may have something to do with the extra palettes, but we cannot say for sure yet.  
 
