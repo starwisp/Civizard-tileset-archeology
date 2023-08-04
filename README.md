@@ -242,7 +242,7 @@ Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) t
 If we can combine 2 bins, maybe all 4 bins might be part of one file that was split at the wrong points. The solution was to manually combine all 4 larger bins from each, world0.bmf and world1.bmf, into one file. This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
-<b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (@simbey that magic forest is for you ).</b>  
+<b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (cheers @simbey, found a magic forest for you).</b>  
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
 
