@@ -252,11 +252,11 @@ There are 4 different palette files in each the world0.bmf and world1.bmf contai
 So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). This calls into question our suspicion that world0.bmf is for Arcanus and world1.bmf is for Myror. Maybe we will stumble over the solution to that later.  
 Many of these tiles look pretty muted compared to their in-game appearance. This is due to some clever CLUT animations: The palettes get changed fast enough that it appears as if there is an animation happening (with different tiles being swapped in as animation phases).  
 This is only halfway true: It is the same tile that gets swapped in as different animation phases. Instead, the palettes/CLUTs are getting cycled, which leads to for example the shore wave animations or glow effects in Civizard. This technique is called canvas cycling. See an example for that in further information ('Example of canvas cycling').  
-This is the reason why in the beginning I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.). "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs. 
-Let's see if we can figure out how this works exactly in Civizard.  
+This is the reason why at the earlier stages of this project, I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.), but later, in the decompressed files they where nowhere to be seen. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs. 
+Let's see if we can figure out how this works in Civizard. It may have something to do with the extra CLUTs/palettes, but we cannot say for sure.  
 
 
-One problem solved.  
+Some questions answered, more questions found.  
 This still involves a lot of manual steps and knowledge of PSX graphics and the usage of "tiledggd-pe-". The script still cannot deal with the terrain tile containers. Then there is the question why so far we only needed 2 of the 4 palette files and if they may be combined with the rest of the tileset graphics data to make this a regular *.tim graphics file that can be loaded into an editor like most of the other files, thus eliminating the need for 'TiledGGD'. The aim is to automate some parts of this. Until the next one.
 
 To be continued...
