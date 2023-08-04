@@ -257,7 +257,7 @@ Let's see if we can figure out how this works in Civizard. It may have something
 
 
 Some questions answered, more questions found.  
-This still involves a lot of manual steps and knowledge of PSX graphics and the usage of "tiledggd-pe-" and other tools. The script still cannot deal with the terrain tile containers. Then there is the question why so far we only needed 2 of the 4 palette files and if they may be combined with the rest of the tileset graphics data to make this a regular *.tim graphics file that can be loaded into an editor like most of the other files, thus eliminating the need for 'TiledGGD'. The aim is to automate some parts of this. Until the next one.
+This still involves a lot of manual steps and knowledge of PSX graphics and the usage of "tiledggd-pe-" and other tools. The script still cannot deal with the terrain tile containers. Then there is the question why so far we only needed 2 of the 4 palette files and if they may be combined with the rest of the tileset graphics data to make this a regular *.tim graphics file with no need for 'TiledGGD'. 
 
 To be continued...
 
