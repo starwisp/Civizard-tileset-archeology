@@ -251,7 +251,7 @@ So now we reduced the files from world0.bmf and world1.bmf each to one *.tim fil
 There are 4 different palette files in world0.bmf and world1.bmf. These are the same palettes for both containers.  
 So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So, why does each bmf file contain the same 4 palette files, 1 seemingly unused and 2 palette files of unknown purpose?  
 
-The answer, we suspect, may lie in an interesting animation technique used classic games. Many of these tiles look muted compared to their in-game appearance. This is due to some clever CLUT animations. The palettes if these terrain tiles get changed fast enough that it appears as an animation. But instead of different tiles as animation phases (such as with the monster tiles), it is the same tile but in different palettes. This, for example, leads to the shore wave animations or glow effects in Civizard. This technique is called color cyclin#g. (see 'Example of color cycling' and wikipedia entry in "Further Information").  
+The answer, we suspect, may lie in an interesting animation technique used classic games. Many of these tiles look muted compared to their in-game appearance. This is due to some clever CLUT animations. The palettes if these terrain tiles get changed fast enough that it appears as an animation. But instead of different tiles as animation phases (such as with the monster tiles), it is the same tile but in different palettes. This, for example, leads to the shore wave animations or glow effects in Civizard. This technique is called color cycling. (see 'Example of color cycling' and link to Wikipedia entry on color cycling in "Further Information").  
 
 
 
@@ -260,7 +260,7 @@ https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b4635be5-
 
 <b>Shore animation. Color cycling in Civizard.</b>   
 
-This is the reason why in earlier stages of this project, I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
+This is the reason why in earlier stages of this project, I could dump animation phases of shore tiles with waves from VRAM (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
 Let's see if we can figure out how this works in Civizard. It may have something to do with the extra palettes, but we cannot say for sure yet.  
 
 
