@@ -223,7 +223,7 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early. 
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>  
-<b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b>  
+<figcaption> <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b> </figcaption>   
 
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
 <b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'</b>  
@@ -232,7 +232,7 @@ I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing 
 <b>Arrows point to problems: Last tile has some bytes missing; Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
 
 While we were brainstorming this, Vervalkon noticed the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra four pixels in its end. 
-So maybe all 4 bins could be part of one file that was split too early. The trick then was to manually combine all 4 larger bins from world0.bmf and world1.bmf, respectively.
+Since one tile has 24x24 pixels. that would hint at more tile when combined. If we can combine 2 bins, maybe all 4 bins might be part of one file that was split too early. The trick then was to manually combine all 4 larger bins from world0.bmf and world1.bmf, respectively.
 This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)  
