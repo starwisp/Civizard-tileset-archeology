@@ -431,4 +431,5 @@ _________
 + Video on decompression for the psx game Tomba 2 by [vervalkon](https://github.com/vervalkon) https://www.youtube.com/watch?v=f6Vh9b1Kiw8
 + Tutorial - How to find PSX palettes by [vervalkon](https://github.com/vervalkon) https://www.vg-resource.com/thread-41343.html
 + Example of color cycling (click "show options") http://www.effectgames.com/demos/canvascycle/
++ Article on color cycling http://www.effectgames.com/effect/article-Old_School_Color_Cycling_with_HTML5.html
 + Wikipedia entry on color cycling https://en.wikipedia.org/wiki/Color_cycling  
