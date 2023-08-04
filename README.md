@@ -224,23 +224,24 @@ I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing 
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
 <b>Extracted tileset - black areas and pixel-shifted, viewed in 'TiledGGD-PE-'</b>
 
-![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)
+![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)  
 <b>Arrows point to problems: Last tile has some bytes missing; Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
 
-While we were brainstorming this, Vervalkon suspected then that all 4 bins could be part of one file that was split too early. The trick then was to manually combine all 4 larger bins from world0.bmf and world1.bmf, respectively.
+While we were brainstorming this, Vervalkon noticed the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra four pixels in its end. 
+So maybe all 4 bins could be part of one file that was split too early. The trick then was to manually combine all 4 larger bins from world0.bmf and world1.bmf, respectively.
 This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
 
-![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)
-<b>Meet the Myror tiles from world1.bmf; Mushroom forest highlighted, (greetings @simbey)</b>  
+![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)  
+<b>Meet the Myror tiles from world1.bmf; Mushroom forest highlighted, (greetings @simbey;-))</b>  
 
-So now we know world0.bmf and world1.bmf contain each one *.tim file for landmarks, 1 bin file for tiles, 4 bin files for palettes (more on that later).   
+So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
 
 
 
 Now on to the CLUT animation cycling....
 Many of these tiles look pretty muted compared to their in-game appearance. 
 This is due to some clever CLUT animations. Meaning the CLUTs get changed fast enough that it appears as if there is some kind of animation happening (with different tiles being swapped in as animation phases).
-But that is not the case: Instead the palettes are getting cycled, which leads to for example the shore wave animations or some tiles having a glow effect on them.
+But that is not the case: Instead the palettes are getting cycled, which leads to for example the shore wave animations or some tiles having a glow effect on them. See an example for that in further information ('Example of canvas cycling'). This is also the reason why in the beginning I could dump animation phases of shore tiles with waves. (see images on 3.1.2.) "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.  
 
 
 
@@ -416,3 +417,4 @@ _________
 + Theoretical background of the decompressor script using a similar case as example by [vervalkon](https://github.com/vervalkon) https://www.youtube.com/watch?v=LASE8IiGB9Q
 + Video on decompression for the psx game Tomba 2 by [vervalkon](https://github.com/vervalkon) https://www.youtube.com/watch?v=f6Vh9b1Kiw8
 + Tutorial - How to find PSX palettes by [vervalkon](https://github.com/vervalkon) https://www.vg-resource.com/thread-41343.html
++ Example of canvas cycling (click "show options") http://www.effectgames.com/demos/canvascycle/
