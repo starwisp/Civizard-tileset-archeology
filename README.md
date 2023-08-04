@@ -219,11 +219,16 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
 
-#### 5.4. UPDATE. Progress! Terrain and more...
-I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early. 
+#### 5.4. UPDATE. Progress on Terrain tiles
+I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early.  
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>   
-<figcaption> <b>pixel shifts; viewed in 'TiledGGD-PE-'</b> </figcaption>   
+<p align="center">
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>  
+  <br>
+    <b>'shifted' pixels; viewed in 'TiledGGD-PE-'</b>
+</p>
+
+
 
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
 <b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'</b>  
@@ -239,6 +244,8 @@ This got rid of the tearing and shifting in the tiles and left us 2 nicely laid 
 <b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (@simbey that magic forest is for you ).</b>  
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
+
+So far this still involves a lot of manual steps. The problem is getting most of this into a script.  
 
 
 
