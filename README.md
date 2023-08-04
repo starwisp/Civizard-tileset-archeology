@@ -235,7 +235,7 @@ I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' 
 <b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'.</b>  
 
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)  
-<b>Arrows point to problems: Last tile has some bytes missing; black areas could be normal. The black area on position 00 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 00. So we can infer that it may be intentional.</b>  
+<b>Arrows point to problems: Last tile has some bytes missing; black areas could be normal. The black area on position 00 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 00. So we can infer that it may be intentional. We will look into this a bit more, though.</b>  
 
 While we were brainstorming this, Vervalkon was able to pinpoint the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra 4 pixels in its end. 
 Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) that was split onto 2 files during decompression. This shifted the pixels of most files around (also the pixels of 24x24 completely black tiles). Since 'TiledGGD-PE-' was set to display that large chunk of grafics data as blocks of 24x24 pixels (the tiles), we ended up with 'shifts'/'tears'. 
