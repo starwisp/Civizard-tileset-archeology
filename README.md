@@ -219,11 +219,11 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
 
-#### 5.4. UPDATE. Progress on Terrain tiles
+#### 5.4. UPDATE. Progress with terrain tileset
 I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early.  
 
 <p align="center">
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>  
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="500"/>  
   <br>
     <b>'shifted' pixels; viewed in 'TiledGGD-PE-'</b>
 </p>
