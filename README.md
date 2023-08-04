@@ -221,25 +221,25 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 
 
 #### 5.4. UPDATE. Progress with terrain tileset
-I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' and noticed 'shifting' and 'tearing' and a cut off area at the end of another bin that looked like it was cut off too early.  
+I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' and noticed 'shifting' and 'tearing' and an area at the end of another bin that looked like it was cut off too early.  
 
 <p align="center">
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="500"/>  
   <br>
-    <b>'shifted' pixels; viewed in 'TiledGGD-PE-'</b>
+    <b>'Shifted' pixels; viewed in 'TiledGGD-PE-'.</b>
 </p>
 
 
 
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
-<b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'</b>  
+<b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'.</b>  
 
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)  
-<b>Arrows point to problems: Last tile has some bytes missing; black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
+<b>Arrows point to problems: Last tile has some bytes missing; black areas could be normal. The black area on position 00 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 00. So we can infer that it may be intentional.</b>  
 
 While we were brainstorming this, Vervalkon was able to pinpoint the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra 4 pixels in its end. 
-Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) that was split on 2 files during decompression. This shifted the pixels of most files around (also the 24x24 completely black tiles). Since 'TiledGGD-PE-' was set to display that large chunk of grafics data as blocks of 24x24 pixels (the tiles), we ended up with 'shifts'/'tears'. 
-If we can combine 2 bins, maybe all 4 bins might be part of one file that was split at the wrong points. The solution was to manually combine all 4 larger bins from each, world0.bmf and world1.bmf, into one file. This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
+Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) that was split onto 2 files during decompression. This shifted the pixels of most files around (also the pixels of 24x24 completely black tiles). Since 'TiledGGD-PE-' was set to display that large chunk of grafics data as blocks of 24x24 pixels (the tiles), we ended up with 'shifts'/'tears'. 
+If 2 bins are actually one file and the other 2 have the same problems, maybe all 4 bins might be part of one large file that was split at the wrong points. The solution was to manually combine all 4 larger bins into one file (world0.bmf and world1.bmf, respectively). This got rid of the tearing and shifting and left us 2 nicely laid out files (still sans palettes). 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (cheers @simbey, found a magic forest for you).</b>  
