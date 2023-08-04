@@ -202,7 +202,7 @@ TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD):
 
 _________
 ### 5. Results
-In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that were harder to get to. (see discussion in 5.4). Some speculation on how to proceed from here. Advice and additional information is always welcome.
+In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that are harder to get to. Some speculation on how to proceed from here. Advice and additional information is always welcome.
 
 #### 5.1. It is possible to obtain most probably all the tileset's tiles as *.TIM files via a Python decompression script excluding the terrain tiles. 
 *.Tim files are standard PSX image containers and can be read and exported to standard formats by a standard TIM viewer such as 'TIM2View' and suspicious *.bin files that unknown chunks of data. 
@@ -217,6 +217,7 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 
 ![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
+
 
 
 #### 5.4. UPDATE. Progress with terrain tileset
@@ -238,23 +239,24 @@ I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' 
 
 While we were brainstorming this, Vervalkon was able to pinpoint the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra 4 pixels in its end. 
 Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) that was split on 2 files during decompression. This shifted the pixels of most files around (also the 24x24 completely black tiles). Since 'TiledGGD-PE-' was set to display that large chunk of grafics data as blocks of 24x24 pixels (the tiles), we ended up with 'shifts'/'tears'. 
-If we can combine 2 bins, maybe all 4 bins might be part of one file that was split at the wrong point. The solution was to manually combine all 4 larger bins from each, world0.bmf and world1.bmf, into one file. This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
+If we can combine 2 bins, maybe all 4 bins might be part of one file that was split at the wrong points. The solution was to manually combine all 4 larger bins from each, world0.bmf and world1.bmf, into one file. This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (@simbey that magic forest is for you ).</b>  
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
 
-So far this still involves a lot of manual steps. The problem is getting most of this into a script.  
+One problem solved.  
+This still involves a lot of manual steps and knowledge of PSX graphics and the usage of "tiledggd-pe-". Then there is the question why so far we only needed 2 of the 4 palette files and if they may be combined with the rest of the tileset graphics data to make this a regular *.tim graphics file that can be loaded into an editor like most of the other files and thus eliminate the need for 'TiledGGD'. The aim is getting at least some of this automated.  
 
 
 #### 5.5. Now on to the 4 CLUT files (what are they for?) 
 There are 4 different palette files in each the world0.bmf and world1.bmf containers. These are the same palettes for both containers.  
-So far I could determine in TiledGGD-pe- that palette 00001104.bin produces tiles for Arcanus (with greens and blues) and 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4. for an example of that). This calls into question our suspicion that world0.bmf is for Arcanus and world1.bmf is for Myror. Maybe we stumble over the solution to that later.  
-Many of these tiles look pretty muted compared to their in-game appearance. This is due to some clever CLUT animations: The palettes get changed fast enough that it appears as if there is some kind of animation happening (with different tiles being swapped in as animation phases).  
-But that is only halfway true: It is the same tile. Instead, the palettes/CLUTs are getting cycled, which leads to for example the shore wave animations or glow effects in Civizard. This technique is also called Canvas cycling. See an example for that in further information ('Example of canvas cycling').  
-This is also the reason why in the beginning I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.). "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs. 
-Let's see if we can figure this out for Civizard.  
+So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). This calls into question our suspicion that world0.bmf is for Arcanus and world1.bmf is for Myror. Maybe we will stumble over the solution to that later.  
+Many of these tiles look pretty muted compared to their in-game appearance. This is due to some clever CLUT animations: The palettes get changed fast enough that it appears as if there is an animation happening (with different tiles being swapped in as animation phases).  
+This is only halfway true: It is the same tile that gets swapped in as different animation phases. Instead, the palettes/CLUTs are getting cycled, which leads to for example the shore wave animations or glow effects in Civizard. This technique is called canvas cycling. See an example for that in further information ('Example of canvas cycling').  
+This is the reason why in the beginning I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.). "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs. 
+Let's see if we can figure out how this works exactly in Civizard.  
 To be continued...
 
 
@@ -278,17 +280,12 @@ TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD):
 GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip  
 
 
- 
 
 
-
-
-???? Known problems: delete later  - this is being worked on at the moment... for everyone just looking... WIP 
+ ???? Known problems: delete later  - this is being worked on at the moment... for everyone just looking... WIP 
 Combining the suspected palette bin files with the larger graphics bin data files after they were generated by the Python script, showed something akin to terrain tiles but the result was still not correct.
 
-![tiledggd-pe- tiles directly after script](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/6c4b2440-a0ed-489d-9781-03fe14a7c3c8)
-
-
+![tiledggd-pe- tiles directly after script](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/6c4b2440-a0ed-489d-9781-03fe14a7c3c8)  
 <b>decompressed terrain graphics data united with palette data ??? most probably needs to be removed</b>  
 
 Explanation:
