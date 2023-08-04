@@ -221,8 +221,12 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 
 5.4. UPDATE. Progress!...
 I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early. 
+
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>  
+<b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b>  
+
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
-<b>Extracted tileset - black areas and pixel-shifted, viewed in 'TiledGGD-PE-'</b>
+<b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'</b>  
 
 ![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)  
 <b>Arrows point to problems: Last tile has some bytes missing; Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
@@ -232,8 +236,7 @@ So maybe all 4 bins could be part of one file that was split too early. The tric
 This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)  
-<b>Meet the Myror tiles from world1.bmf; Mushroom forest highlighted, (greetings @simbey;-))</b>  
-
+<b>Meet the Myror tiles from world1.bmf; mushroom forest highlighted (@simbey that magic forest is for you ).</b>    
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
 
 
@@ -255,8 +258,7 @@ But that is not the case: Instead the palettes are getting cycled, which leads t
 ![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
 <b>Possible hints for the internal CLUT handling of the game</b>    
   
-+ Some of the image data were pixel shifted in one or two directions. One tileset looked good. This may be rectified by using the image data offset function in editors like 'GGD' or 'TiledGGD-PE-'. The problem here is that I have not found an editor that can apply this offset, fuse image files and palette files, and save the whole set at once with all the settings needed. It will work in increments of a couple of tiles in 'GGD' but then you would somehow have to put the set back together afterwards. 
-+ The last tile in some of tileset files seems to have a couple of pixels missing, probably an artefact of the script.
+
 + There were areas with no tiles/black areas in every terrain tileset (see picture below). I have no idea if these are supposed to be there or if they are some kind of corruption.
 + Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. 
 Within the world0 and world1 output directory we ended up with files with image data and files with palette data. The palette files can be read and reunited with the image data with the tools 'TiledGGD-PE-' or 'GGD'. In this case, 'TiledGGD-PE' was used. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we also already started looking into the CLUT handling of the executable.
@@ -265,12 +267,7 @@ TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD):
 GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip  
 
 
-   
-![Pixels shifted 8 pixel columns horizontally 1 pixel vertically](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e)
-
-
-
-<b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b>   
+ 
 
 
 
