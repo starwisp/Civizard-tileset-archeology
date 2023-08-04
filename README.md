@@ -239,7 +239,7 @@ I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' 
 
 While we were brainstorming this, Vervalkon was able to pinpoint the problem: The shifting pixel issue was because, 00067084.bin.out was missing 20 pixels from the beginning and 00010384.bin.out had an extra 4 pixels in its end. 
 Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) that was split onto 2 files during decompression. This shifted the pixels of most files around (also the pixels of 24x24 completely black tiles). Since 'TiledGGD-PE-' was set to display that large chunk of grafics data as blocks of 24x24 pixels (the tiles), we ended up with 'shifts'/'tears'. 
-If 2 bins are actually one file and the other 2 have the same problems, maybe all 4 bins might be part of one large file that was split at the wrong points. The solution was to manually combine all 4 larger bins into one file (world0.bmf and world1.bmf, respectively). This got rid of the tearing and shifting and left us 2 nicely laid out files (still sans palettes). 
+If 2 bins are actually one file and the other 2 have the same problems, maybe all 4 bins might be part of one large file that was split at the wrong points. The solution was to manually combine all 4 larger bins into one file (world0.bmf and world1.bmf, respectively). This got rid of the tearing and shifting and left us 2 nicely laid out files (still sans palettes).  
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Myror tiles from world1.bmf; no "tearing"; mushroom forest tiles highlighted.</b>  
@@ -255,7 +255,8 @@ The answer, we suspect may lie in an interesting animation technique. Many of th
 
 
 https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/7961c1cf-9470-4501-b91c-3000237187df  
-<b>Wave animation in Civizard. Example of canvas cycling.</b>   
+
+<b>Shore animation in Civizard. Example of canvas cycling.</b>   
 
 This is the reason why in earlier stages of this project, I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
 Let's see if we can figure out how this works in Civizard. It may have something to do with the extra palettes, but we cannot say for sure yet.  
