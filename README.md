@@ -244,7 +244,7 @@ If 2 bins are actually one file and the other 2 have the same problems, maybe al
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Myror tiles from world1.bmf; mushroom forest highlighted (cheers @simbey, found a magic forest for you). Compare with above picture with highlighted forst: Same tiles as regular forest, just in another palette. Very clever way of dealing with the limited hardware resources of the PSX</b>  
 
-So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles, four bin files for palettes (more on that later). Let us see if this stays like that. 
+So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes (more on that later). Let us see if this stays like that. 
 
 
 #### 5.5. Now on to the 4 CLUT files (what are they for?) 
