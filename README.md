@@ -219,9 +219,34 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
 
+5.4. UPDATE. Progress!...
+I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early. 
+![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
+<b>Extracted tileset - black areas and pixel-shifted, viewed in 'TiledGGD-PE-'</b>
+
+![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)
+<b>Arrows point to problems: Last tile has some bytes missing; Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
+
+While we were brainstorming this, Vervalkon suspected then that all 4 bins could be part of one file that was split too early. The trick then was to manually combine all 4 larger bins from world0.bmf and world1.bmf, respectively.
+This got rid of the tearing and shifting in the tiles and left us 2 nicely laid out terrain tilesets. 
+
+![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)
+<b>Meet the Myror tiles from world1.bmf; Mushroom forest highlighted, (greetings @simbey)</b>  
+
+So now we know world0.bmf and world1.bmf contain each one *.tim file for landmarks, 1 bin file for tiles, 4 bin files for palettes (more on that later).   
+
+
+
+Now on to the CLUT animation cycling....
+Many of these tiles look pretty muted compared to their in-game appearance. 
+This is due to some clever CLUT animations. Meaning the CLUTs get changed fast enough that it appears as if there is some kind of animation happening (with different tiles being swapped in as animation phases).
+But that is not the case: Instead the palettes are getting cycled, which leads to for example the shore wave animations or some tiles having a glow effect on them.
+
+
+
 
 <ins><b>!!!! Dear reader, 5.4 is obsolete. Please skip this part to section 6. We think we know the problem. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
-#### 5.4. Problems with the decompressed terrain tiles and further ideas WIP 
+#### Problems with the decompressed terrain tiles and further ideas WIP 
 
 + The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. The "names" should be handled internally by the Civizard executable.  
 + I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
@@ -238,8 +263,7 @@ Within the world0 and world1 output directory we ended up with files with image 
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-   
 GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip  
 
-![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
-<b>Extracted tileset - black areas and pixel-shifted, viewed in 'TiledGGD-PE-'</b>
+
    
 ![Pixels shifted 8 pixel columns horizontally 1 pixel vertically](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e)
 
@@ -247,8 +271,7 @@ GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip
 
 <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b>   
 
-![middle correct tiles](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/021c45cd-81ed-4c43-9a24-d9351c35a417)
-<b>Arrows point to problems: Last tile has some bytes missing (script cut too early?); Black areas could be normal. The black area on position 1 in the decompressed terrain datafile occurs in the live game after sequential tile injection (see image in 6.2) as well on position 1, so we can infer that it may be intentional.</b>  
+
 
 
 ???? Known problems: delete later  - this is being worked on at the moment... for everyone just looking... WIP 
