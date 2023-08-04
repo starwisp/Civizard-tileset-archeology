@@ -252,7 +252,7 @@ There are 4 different palette files in world0.bmf and world1.bmf. These are the 
 So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So, why does each bmf file contain the same 4 palette files, 1 seemingly unused and 2 palette files of unknown purpose?  
 
 The answer, we suspect, may lie in an interesting animation technique used in classic games. Many of these terrain tiles look muted compared to their in-game appearance. This is due to clever CLUT animations. The palettes if these terrain tiles get changed fast enough that it appears as an animation. But instead of different tiles as animation phases (such as with the monster tiles), it is the same tile but in different palettes. This, for example, leads to the shore wave animations or glow effects in Civizard. This technique is called color cycling. (see 'Example of color cycling' and link to Wikipedia entry on color cycling in "Further Information"). This way the game can change the muted colors of terrain tiles to an almost glowing effect. 
-
+In a way, there is no one true palette to get the ingame look of some of the tiles. Which bears the question of which palette to best use them in if the color cycling can not replicated.  
 
 
 
