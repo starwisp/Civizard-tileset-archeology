@@ -242,7 +242,7 @@ Since one tile has 24x24 pixels that would hint at one more tile (20+4 pixels) t
 If 2 bins are actually one file and the other 2 have the same problems, maybe all 4 bins might be part of one large file that was split at the wrong points. The solution was to manually combine all 4 larger bins into one file (world0.bmf and world1.bmf, respectively). This got rid of the tearing and shifting and left us 2 nicely laid out files (still sans palettes). 
 
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
-<b>Myror tiles from world1.bmf; mushroom forest highlighted (cheers @simbey, found a magic forest for you). Compare with above picture with highlighted forst: Same tiles as regular forest, just in another palette. Very clever way of dealing with the limited hardware resources of the PSX</b>  
+<b>Myror tiles from world1.bmf; mushroom forest highlighted (cheers @simbey, found a magic forest for you).</b>  
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes (more on that later). Let us see if this stays like that. 
 
