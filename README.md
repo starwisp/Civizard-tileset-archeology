@@ -219,11 +219,11 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
 
-5.4. UPDATE. Progress!...
+#### 5.4. UPDATE. Progress! Terrain and more...
 I looked at the 4 output files in TiledGGD-pe- and noticed shifting and tearing at some, and cut off areas at the end of another bin that looked like it was cut off too early. 
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>  
-<figcaption> <b>More detailed view of pixel shifts, viewed in 'TiledGGD-PE-'; also see used values and palette view</b> </figcaption>   
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8415f6df-3058-496c-992e-cdd2ab349f7e" alt="drawing" width="350"/>   
+<figcaption> <b>pixel shifts; viewed in 'TiledGGD-PE-'</b> </figcaption>   
 
 ![View in TiledGGD-PE, pixel-shifted](https://user-images.githubusercontent.com/81810020/175186828-95a6090f-c4f6-4833-a787-4a937575c4ef.JPG)  
 <b>Extracted tileset - black areas and tearing, viewed in 'TiledGGD-PE-'</b>  
@@ -242,13 +242,14 @@ So now we reduced the files from world0.bmf and world1.bmf each to one *.tim fil
 
 
 
-<b>5.5. Now on to the 4 CLUT files (what are they for?)</b>  
+#### 5.5. Now on to the 4 CLUT files (what are they for?) 
 There are 4 different palette files in each the world0.bmf and world1.bmf containers. These are the same palettes for both containers.  
 So far I could determine in TiledGGD-pe- that palette 00001104.bin produces tiles for Arcanus (with greens and blues) and 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4. for an example of that). This calls into question our suspicion that world0.bmf is for Arcanus and world1.bmf is for Myror. Maybe we stumble over the solution to that later.  
 Many of these tiles look pretty muted compared to their in-game appearance. This is due to some clever CLUT animations: The palettes get changed fast enough that it appears as if there is some kind of animation happening (with different tiles being swapped in as animation phases).  
 But that is only halfway true: It is the same tile. Instead, the palettes/CLUTs are getting cycled, which leads to for example the shore wave animations or glow effects in Civizard. This technique is also called Canvas cycling. See an example for that in further information ('Example of canvas cycling').  
 This is also the reason why in the beginning I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.). "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs. 
-
+Let's see if we can figure this out for Civizard.  
+To be continued...
 
 
 
