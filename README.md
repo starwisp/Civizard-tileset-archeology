@@ -248,7 +248,7 @@ So now we reduced the files from world0.bmf and world1.bmf each to one *.tim fil
 
 
 #### 5.5. Now on to the 4 CLUT files (what are they for?) 
-There are 4 different palette files in each the world0.bmf and world1.bmf containers. These are the same palettes for both containers.  
+There are 4 different palette files in world0.bmf and world1.bmf. These are the same palettes for both containers.  
 So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So the question is, why does each bmf file contain 4 palette files and 2 palette files of unknown purpose?  
 
 Many of these tiles look muted compared to their in-game appearance. This is due to some clever CLUT animations. The palettes if these terrain tiles get changed fast enough that it appears as an animation - with different tiles being swapped in as animation phases. But instead of different tiles as animation phases (such as with monster tiles), it is the same tile but in different palettes. This leads to for example the shore wave animations or glow effects in Civizard. This technique is called canvas cycling. See an example for that in further information ('Example of canvas cycling').  
