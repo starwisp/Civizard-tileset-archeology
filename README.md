@@ -253,7 +253,7 @@ So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces ti
 
 The answer, we suspect may lie in an interesting animation technique. Many of these tiles look muted compared to their in-game appearance. This is due to some clever CLUT animations. The palettes if these terrain tiles get changed fast enough that it appears as an animation. But instead of different tiles as animation phases (such as with the monster tiles), it is the same tile but in different palettes. This, for example, leads to the shore wave animations or glow effects in Civizard. This technique is called canvas cycling. See an example for that in further information ('Example of canvas cycling').  
 This is the reason why in earlier stages of this project, I could dump animation phases of shore tiles with waves (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
-Let's see if we can figure out how this works in Civizard. It may have something to do with the extra CLUTs/palettes, but we cannot say for sure.  
+Let's see if we can figure out how this works in Civizard. It may have something to do with the extra CLUTs/palettes, but we cannot say for sure yet.  
 
 
 Some questions answered, more questions found.  
