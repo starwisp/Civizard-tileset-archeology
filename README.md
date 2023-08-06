@@ -434,3 +434,4 @@ _________
 + Article on color cycling http://www.effectgames.com/effect/article-Old_School_Color_Cycling_with_HTML5.html
 + Wikipedia entry on color cycling https://en.wikipedia.org/wiki/Color_cycling  
 + Color cycling information - GDC 2016 Talk "8 Bit & '8 Bitish' Graphics-Outside the Box" by Mark Ferrari https://www.youtube.com/watch?v=aMcJ1Jvtef0
++ Technical information tim format http://rsync.irixnet.org/tutorials/pstutorials/chapter1/3-textures.html
