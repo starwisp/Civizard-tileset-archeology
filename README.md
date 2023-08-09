@@ -433,6 +433,10 @@ While promising, this was not the right file. These glyphs are 8x8 pixels. The g
 
 <b>Possible font graphics file from Civizard.</b>  
 
+![no font](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/66acb733-f027-4a0a-a423-0dfe785ff757)  
+
+<b>Font file or not? this is from the very start of the game and looks suspiciously like suspected font file.  
+
 In the texts of Civizard, several systems of characters can be used: Hiragana, Katakana, Kanji, letters of the western/Latin alphabet, and western numerals. Studying the suspected font image, we can determine the font file contains Hiragana, Katakana, western letters in the expected order, only some Kanji, and special symbols such as cursor arrows; most Kanji and all western numerals are missing. The font's characters have the right size, so it is most probably the right font. If this is indeed the font image, the game most likely picks the characters from the file and puts them into texts such as the one below.  
 According to Google Lens, the Kanji there seem to describe units, buildings and the like. Unfortunately the machine translation is very rough and neither of us is proficient in Japanese, so we have to wait until we can dive a deeper into this and also get confirmation from a Japanese speaker.  
 So far we know, the text below contains Kanji that are not present in the suspected font file above. It is unlikely that this is another font file since some characters are repeated and the text is narrower than in the other 2 font files we found so far. We will know more after decompressing all the bmf files so we can have a look for a file with the Kanji.   
