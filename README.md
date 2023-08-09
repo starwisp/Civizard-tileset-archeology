@@ -277,8 +277,8 @@ To be continued...
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe- 
 
 
-<ins><b>!!!! Dear reader, 5.6 is obsolete. Please skip this part to section 6. We think we know the problem. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
-#### 5.6. Problems with the decompressed terrain tiles and further ideas WIP 
+<ins><b>!!!! Dear reader, the following part is obsolete. Please skip this part to section 6. We think we know the problem. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
+#### Problems with the decompressed terrain tiles and further ideas WIP 
 + find out why script cuts worldx.bmf tileset data into 4 large bin files.
 + The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. The "names" should be handled internally by the Civizard executable.  
 + I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
@@ -427,14 +427,16 @@ I went through the so far decompressed BMF files and found this:
 ![japanese from bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c0590f80-1252-4072-8ed4-6e7185c3a333)   
 <b>Japanese characters from GRPH/main/00058943.tim.</b>  
 
-While promising, this was not the right file. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. So this is a font, but not THE font. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file in question is inside a BMF that cannot be uncompressed as of yet. So either this may have to wait until we can fully decompress every BMF file, or maybe we can get at this from another angle. Back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. Looking through the images we got from there, we found curious images of Japanese text and the font graphics file was among them.     
+While promising, this was not the right file. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. So this is a font, but not THE font. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file in question is inside a BMF that cannot be uncompressed as of yet. So either this may have to wait until we can fully decompress every BMF file, or maybe we can get at this from another angle. Back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. Looking through the images we got from there, we found curious images of Japanese text and the font graphics file was among them.  
 
-![1f7f3ac4-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4)   
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4" alt="drawing" width="400"/>  
+
 <b>Font graphics file from Civizard.</b>  
 
 As far as we can tell, the game picks the characters from this file and puts the characters into texts such as this.  
 
-![1becdbfd-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e1dd215f-58aa-4cf1-8149-0b527d99b881)  
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e1dd215f-58aa-4cf1-8149-0b527d99b881" alt="drawing" width="500" />    
+
 <b>Ingame text saved from VRAM with Retroarch.</b>   
 
 So we now have the font file, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm.  
