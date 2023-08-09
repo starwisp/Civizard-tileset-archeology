@@ -413,7 +413,7 @@ They can be read and exported with the tool jpsxdec.
 
 jpsxdec: https://github.com/m35/jpsxdec
 
-#### 6.6. Civizard text data - a preliminary exploration into translation
+#### Suspicion/work in progress will change 6.6. Civizard text data - a preliminary exploration into translation
 As far as we can tell, there is no English version or fan translation of Civizard. One can of course use translation aids such as google lens and people who have played Master of Magic before will feel right at home.  
 That is no substitute for a real translation. Especially if the translated text is already available via Master of Magic for DOS.  
 While brainstorming on the texture decompression script, we got talking about other aspects of the game such as the fact that there is no translation and had a look into where the text could be stored.  
