@@ -423,31 +423,34 @@ A cursory look at the executable of Civizard revealed English text strings insid
 <b>Text strings of Civizard's "wizards.exe".</b>  
 
 So vervalkon had a deeper look into the text composition algorithm and it is actually very involved. The game does not just load character glyphs from a VRAM page and paste the characters one by one, but actually types the entire sentence to RAM and then copies the precomposed text to VRAM. This is complex and one could argue unnecessary but interesting nonetheless. 
-I went through the so far decompressed BMF files and found this:  
+I went through the so far decompressed BMF files with XnViewMP's thumbnail view for folders and found this:  
 ![japanese from bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c0590f80-1252-4072-8ed4-6e7185c3a333)   
 <b>Japanese characters from GRPH/main/00058943.tim.</b>  
 
-While promising, this was not the right file. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for most text, sometimes even 16x16. So this is a font, but not THE font. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file in question is inside a BMF that cannot be uncompressed as of yet. So either this may have to wait until we can fully decompress every BMF file, or maybe we can get at this from another angle. So, back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. Looking through the images we got from there, we found curious images of Japanese text and a font graphics file was among them.  
+While promising, this was not the right file. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for most text, sometimes even 16x16. So this is a font, but not THE font. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file in question is inside a BMF that cannot be uncompressed as of yet. So either this may have to wait until we can fully decompress every BMF file, or maybe we can get at this from another angle. So, back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. Looking through the images we got from there, we found curious images of Japanese text and the following suspicious text graphics file was among them.  
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4" alt="drawing" width="500"/>  
 
-<b>Possible font graphics file from Civizard.</b>  
+<b>Graphics file with text orderes characters for hiragana, katakana and western letters from Civizard.</b>  
+
+In the texts of Civizard, several systems of characters can be used: Hiragana, Katakana, Kanji, letters of the western/Latin alphabet, and western numerals. So maybe this is the font file or part of the font we are searching for. We can determine the file contains Hiragana, Katakana, western letters in the expected order, only some Kanji, and special symbols such as cursor arrows; most Kanji and all western numerals are missing. The file's characters have the right size, so this looked promising. If this is indeed the font image, the game most likely picks the characters from the file and puts them into texts such as the one at the end of this section. 
+What is missing are the Kanji. So I ran the game again (in Duckstation, another PSX emulator with debug features) and had a look at exactly when that file is used, and if there are hints to the Kanjis.  
+Unfortunately for our project, this was a dead end again. The suspected font file matches the screen where you choose your magician's name almost exactly. So we can conclude this is not a font file but text created with the font.  
 
 ![no font](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/66acb733-f027-4a0a-a423-0dfe785ff757)  
+<b>Font file or not? This is from the very start of the game and looks suspiciously like the suspected font file.</b>  
 
-<b>Font file or not? this is from the very start of the game and looks suspiciously like suspected font file.</b>  
-
-In the texts of Civizard, several systems of characters can be used: Hiragana, Katakana, Kanji, letters of the western/Latin alphabet, and western numerals. Studying the suspected font image, we can determine the font file contains Hiragana, Katakana, western letters in the expected order, only some Kanji, and special symbols such as cursor arrows; most Kanji and all western numerals are missing. The font's characters have the right size, so it is most probably the right font. If this is indeed the font image, the game most likely picks the characters from the file and puts them into texts such as the one below.  
-According to Google Lens, the Kanji there seem to describe units, buildings and the like. Unfortunately the machine translation is very rough and neither of us is proficient in Japanese, so we have to wait until we can dive a deeper into this and also get confirmation from a Japanese speaker.  
-So far we know, the text below contains Kanji that are not present in the suspected font file above. It is unlikely that this is another font file since some characters are repeated and the text is narrower than in the other 2 font files we found so far. We will know more after decompressing all the bmf files so we can have a look for a file with the Kanji.   
+On to the second text we found in our VRAM dumps (see image below). According to Google Lens, the Kanji there seem to describe units, buildings and the like. Unfortunately the machine translation is very rough and neither of us is proficient in Japanese, so we have to wait until we can dive a deeper into this and also get confirmation from a Japanese speaker. There are repeated characters and a mix of different character systems (Kanji, Hiragana, Katakana, western numbers). It is unlikely that this is another font file since some characters are repeated, the text is narrower than in the small font files we found so far, not ordered, and not complete. All in all this did not lead to the font files but we now have an idea what the font file should contain and how it should look like. We will know more after decompressing all the bmf files so we can have a look for a file with the Kanji.   
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e1dd215f-58aa-4cf1-8149-0b527d99b881" alt="drawing" width="500" />    
 
 <b>Text saved from VRAM with Retroarch.</b>   
 
-So we now have some of the font files, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm. 
-Let's see if we find more.  
+So we now have one of the font files from a decompressed BMF file, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm. 
+Let us see if we find more in the future.  
 
+Duckstation PSX Emulator - https://www.duckstation.org/
+XnViewMP - Image viewer (quick overview of the contents of tim file folders, cannot easily flip through CLUTs) - https://www.xnview.com 
 _________
 ### Acknowledgments
 [vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
