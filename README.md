@@ -429,7 +429,7 @@ I went through the so far decompressed BMF files and found this:
 
 While promising, this was not the right file. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for most text, sometimes even 16x16. So this is a font, but not THE font. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file in question is inside a BMF that cannot be uncompressed as of yet. So either this may have to wait until we can fully decompress every BMF file, or maybe we can get at this from another angle. So, back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. Looking through the images we got from there, we found curious images of Japanese text and a font graphics file was among them.  
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4" alt="drawing" width="400"/>  
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4" alt="drawing" width="500"/>  
 
 <b>Possible font graphics file from Civizard.</b>  
 
