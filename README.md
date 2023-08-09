@@ -440,7 +440,7 @@ According to google lens, the Kanji there seem to describe units, buildings and 
 
 <b>Text saved from VRAM with Retroarch.</b>   
 
-So we now have the font file(s), some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm. 
+So we now have some of the font files, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm. 
 Let's see if we find more.  
 
 _________
