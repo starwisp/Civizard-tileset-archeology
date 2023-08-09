@@ -413,7 +413,37 @@ They can be read and exported with the tool jpsxdec.
 
 jpsxdec: https://github.com/m35/jpsxdec
 
+#### 6.6. Civizard text data - a preliminary exploration into translation
+As far as we can tell, there is no English version or fan translation of Civizard. One can of course use translation aids such as google lens and people who have played Master of Magic before will feel right at home.  
+That is no substitute for a real translation. Especially if the translated text is already available via Master of Magic for DOS.  
+While brainstorming on the texture decompression script, we got talking about other aspects of the game such as the fact that there is no translation and had a look into where the text could be stored.  
+A cursory look at the executable of Civizard revealed English text strings inside. Which is curious, since while some UI elements are in English, these strings appear in Japanese ingame.  
+  
+![EXE strings of text data](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0296f06d-ea49-4102-b608-644ca530a503)  
+<b>Text strings of Civizard's "Wizards.exe"</b>  
 
+So vervalkon had a deeper look into the text composition algorithm and it is actually very involved. The game does not just load character glyphs from a VRAM page and paste the characters one by one, but actually types the entire sentence to RAM and then copies the precomposed text to VRAM. Complex and one could argue unnecessary but interesting nonetheless. 
+But the fontfile is inside a compressed BMF. So this might have to wait until we can fully decompress every bmf file. 
+So I went through the so far decompressed BMF files and found this:  
+![japanese from bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c0590f80-1252-4072-8ed4-6e7185c3a333)
+<b> tim file 00058943 with japanese characters</b>  
+
+While promising, verwalkon determined, this was not the right file. This is a font, but not THE font. Those glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. There are multiple fonts, it seems. The one in the image above is one of them.  
+
+So back to the methods from the VERY beginning of this jouney we went: The VRAM dumps with Retroarch. 
+Looking through the images we got from there, we found the font graphics file.   
+
+![1f7f3ac4-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4)  
+<b> Font graphics file from Civizard</v>  
+
+As far as we can tell, the game picks the characters from this file and puts the characters into texts such as this.  
+
+![1becdbfd-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e1dd215f-58aa-4cf1-8149-0b527d99b881)
+<b>Ingame text saved from VRAM with Retroarch</b>   
+
+So we now have the font file, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm.  
+
+Hopefully more to come
 _________
 ### Acknowledgments
 [vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
@@ -434,4 +464,5 @@ _________
 + Article on color cycling http://www.effectgames.com/effect/article-Old_School_Color_Cycling_with_HTML5.html
 + Wikipedia entry on color cycling https://en.wikipedia.org/wiki/Color_cycling  
 + Color cycling information - GDC 2016 Talk "8 Bit & '8 Bitish' Graphics-Outside the Box" by Mark Ferrari https://www.youtube.com/watch?v=aMcJ1Jvtef0
-+ Technical information tim format http://rsync.irixnet.org/tutorials/pstutorials/chapter1/3-textures.html
++ Technical information on the tim format http://rsync.irixnet.org/tutorials/pstutorials/chapter1/3-textures.html
++ Visualized technical information on the tim format from 5:00 onward https://www.youtube.com/watch?v=Nq5rTECKb_w 
