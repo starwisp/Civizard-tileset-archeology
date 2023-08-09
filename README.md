@@ -423,15 +423,12 @@ A cursory look at the executable of Civizard revealed English text strings insid
 <b>Text strings of Civizard's "Wizards.exe"</b>  
 
 So vervalkon had a deeper look into the text composition algorithm and it is actually very involved. The game does not just load character glyphs from a VRAM page and paste the characters one by one, but actually types the entire sentence to RAM and then copies the precomposed text to VRAM. This is complex and one could argue unnecessary but interesting nonetheless. 
-But the fontfile is inside a compressed BMF. So this might have to wait until we can fully decompress every bmf file. 
-So I went through the so far decompressed BMF files and found this:  
+I went through the so far decompressed BMF files and found this:  
 ![japanese from bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c0590f80-1252-4072-8ed4-6e7185c3a333)   
 <b> tim file 00058943 with japanese characters</b>  
 
-While promising, this was not the right file. This is a font, but not THE font. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. There are multiple fonts, it seems. The one in the image above is only one of them.  
-
-So back to the methods from the VERY beginning of this jouney we went: The VRAM dumps with Retroarch. 
-Looking through the images we got from there, we found the font graphics file.   
+While promising, this was not the right file. This is a font, but not THE font. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file(s) is inside a BMF that cannot be uncompressed, yet. So this might have to wait until we can fully decompress every BMF file; or maybe we can get at this from another angle. Back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. 
+Looking through the images we got from there, we found curious images with text characters and the font graphics file was among them.   
 
 ![1f7f3ac4-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4)   
 <b> Font graphics file from Civizard</b>  
