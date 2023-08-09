@@ -420,23 +420,22 @@ While brainstorming on the texture decompression script, we got talking about ot
 A cursory look at the executable of Civizard revealed English text strings inside; which is curious, since while some UI elements are in English, these strings appear in Japanese ingame.  
   
 ![EXE strings of text data](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0296f06d-ea49-4102-b608-644ca530a503)  
-<b>Text strings of Civizard's "Wizards.exe"</b>  
+<b>Text strings of Civizard's "wizards.exe".</b>  
 
 So vervalkon had a deeper look into the text composition algorithm and it is actually very involved. The game does not just load character glyphs from a VRAM page and paste the characters one by one, but actually types the entire sentence to RAM and then copies the precomposed text to VRAM. This is complex and one could argue unnecessary but interesting nonetheless. 
 I went through the so far decompressed BMF files and found this:  
 ![japanese from bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c0590f80-1252-4072-8ed4-6e7185c3a333)   
-<b> tim file 00058943 with japanese characters</b>  
+<b>Japanese characters from GRPH/main/00058943.tim.</b>  
 
-While promising, this was not the right file. This is a font, but not THE font. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file(s) is inside a BMF that cannot be uncompressed, yet. So this might have to wait until we can fully decompress every BMF file; or maybe we can get at this from another angle. Back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. 
-Looking through the images we got from there, we found curious images with text characters and the font graphics file was among them.   
+While promising, this was not the right file. These glyphs are 8x8 pixels. The game uses 12x12 glyphs for the text, sometimes even 16x16. So this is a font, but not THE font. There are multiple fonts, it seems. The one in the image above is only one of them. Unfortunately, the font file in question is inside a BMF that cannot be uncompressed as of yet. So either this may have to wait until we can fully decompress every BMF file, or maybe we can get at this from another angle. Back to the methods from the VERY beginning of this jouney: The VRAM dumps with Retroarch. Looking through the images we got from there, we found curious images of Japanese text and the font graphics file was among them.     
 
 ![1f7f3ac4-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4)   
-<b> Font graphics file from Civizard</b>  
+<b>Font graphics file from Civizard.</b>  
 
 As far as we can tell, the game picks the characters from this file and puts the characters into texts such as this.  
 
 ![1becdbfd-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e1dd215f-58aa-4cf1-8149-0b527d99b881)  
-<b>Ingame text saved from VRAM with Retroarch</b>   
+<b>Ingame text saved from VRAM with Retroarch.</b>   
 
 So we now have the font file, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm.  
 
