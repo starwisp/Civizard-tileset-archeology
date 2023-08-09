@@ -433,13 +433,14 @@ While promising, this was not the right file. These glyphs are 8x8 pixels. The g
 
 <b>Font graphics file from Civizard.</b>  
 
-As far as we can tell, the game picks the characters from this file and puts the characters into texts such as this.  
+As far as we can tell, the game possibly picks the characters from the font file above and puts them into texts such as the one below. Another possiblity is that the file below is part of the font but for certain Kanji since according to google lens, Kanji there seem to describe units, buildings and the like. Unfortunately the machine translation only gives a very rough translation and neither of us is fluent in Japanese.
 
 <img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e1dd215f-58aa-4cf1-8149-0b527d99b881" alt="drawing" width="500" />    
 
-<b>Ingame text saved from VRAM with Retroarch.</b>   
+<b>Text saved from VRAM with Retroarch.</b>   
 
-So we now have the font file, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm.  
+So we now have the font file(s), some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm. 
+Let's see if we find more.  
 
 _________
 ### Acknowledgments
