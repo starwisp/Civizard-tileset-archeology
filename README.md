@@ -434,7 +434,7 @@ So back to the methods from the VERY beginning of this jouney we went: The VRAM 
 Looking through the images we got from there, we found the font graphics file.   
 
 ![1f7f3ac4-3aba5591](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ec8f1a76-ffd6-441e-9963-cd754538bfa4)   
-<b> Font graphics file from Civizard</v>  
+<b> Font graphics file from Civizard</b>  
 
 As far as we can tell, the game picks the characters from this file and puts the characters into texts such as this.  
 
