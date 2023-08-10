@@ -451,7 +451,7 @@ So we now have one of the font files from a decompressed BMF file, some strings 
 Let us see if we find more in the future.  
 
 Duckstation PSX Emulator: https://www.duckstation.org/  
-XnViewMP Image viewer: (quick overview of the contents of tim file folders, cannot easily flip through CLUTs) - https://www.xnview.com  
+XnViewMP Image viewer (tim files as thumbnails in folders; cannot easily flip through CLUTs): https://www.xnview.com  
 No$PSX emulator/debugger: https://problemkaputt.de/psx.htm  
 _________
 ### Acknowledgments
