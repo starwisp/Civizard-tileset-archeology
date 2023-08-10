@@ -451,8 +451,8 @@ So we now have one of the font files from a decompressed BMF file, some strings 
 Let us see if we find more in the future.  
 
 Duckstation PSX Emulator: https://www.duckstation.org/  
-XnViewMP Image viewer (tim files as thumbnails in folders; cannot easily flip through CLUTs): https://www.xnview.com  
-No$PSX emulator/debugger: https://problemkaputt.de/psx.htm  
+XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip through CLUTs): https://www.xnview.com  
+No$PSX Emulator/Debugger: https://problemkaputt.de/psx.htm  
 _________
 ### Acknowledgments
 [vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
