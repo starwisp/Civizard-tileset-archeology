@@ -450,8 +450,9 @@ All in all this did not lead to the font files but we now have an idea what the 
 So we now have one of the font files from a decompressed BMF file, some strings from Civizard's executable ("Wizards.exe") and a cursory look at the game's text composition algorithm. 
 Let us see if we find more in the future.  
 
-Duckstation PSX Emulator - https://www.duckstation.org/
-XnViewMP - Image viewer (quick overview of the contents of tim file folders, cannot easily flip through CLUTs) - https://www.xnview.com 
+Duckstation PSX Emulator: https://www.duckstation.org/  
+XnViewMP Image viewer: (quick overview of the contents of tim file folders, cannot easily flip through CLUTs) - https://www.xnview.com  
+No$PSX emulator/debugger: https://problemkaputt.de/psx.htm  
 _________
 ### Acknowledgments
 [vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
