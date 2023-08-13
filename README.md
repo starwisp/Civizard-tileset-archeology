@@ -200,27 +200,8 @@ No$PSX emulator: https://problemkaputt.de/psx.htm
 GGD: https://randomhoohaas.flyingomelette.com/ai/spriterip/GGD-e.zip  
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-     
 
-_________
-### 5. Results
-In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that are harder to get to. Some speculation on how to proceed from here. Advice and additional information is always welcome.
+#### 4.4. Terrain tileset 2nd look  
 
-#### 5.1. It is possible to obtain most probably all the tileset's tiles as *.TIM files via a Python decompression script excluding the terrain tiles. 
-*.Tim files are standard PSX image containers and can be read and exported to standard formats by a standard TIM viewer such as 'TIM2View' and suspicious *.bin files that unknown chunks of data. 
-Feeding the TIM files into a TIM viewer gives you all the sprites, UI elements etc. in all palettes (or CLUTs as they are also called in PSX viewers). With Tim2View or Yu_Ri PSX file viewer/converter, they can be converted to PNGs or BMPs with or without transparency. For a full tileset you would have to make sure to also convert them in all the palettes. These tools unfortunately do not automatically do this. They also do not automatically export them into appropriately named subfolders but into one folder and seemingly randomly numbered files. The game logic most probably knows what to do with the numbering though. 
-#### 5.2. It is possible to obtain some terrain tiles from VRAM. 
-Using this method, it was not possible to find out the terrain tiles' correct order and naming scheme in the terrain data containers, their correct palettes, or if we have all of them. This is probably handled by the executable. We may try to do that next.  
-#### 5.3. It is possible to decompress world0.bmf and world1.bmf into binary files consisting of terrain tile image data plus their palette information - but with problems
-The suspicious files from world0.bmf and world1.bmf were indeed each 4 files with the image data for terrain tiles and 4 files with corresponding palette information (so one .BMF file for Arcanus and one for Myror). Now we have to find the correct pairs of image data files and palette files. 
-
-
-The dumps from the PSX VRAM were not in vain since in theory they might be used to verify the correct palette file <-> data file pairs. I have not been able to do that for all files yet.
-
-![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
-<b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
-
-
-
-#### 5.4. UPDATE. Progress with terrain tileset
 I looked at the 4 larger files with the terrain graphics data in 'TiledGGD-pe-' and noticed 'shifting' and 'tearing' and an area at the end of another bin that looked like it was cut off too early.  
 
 <p align="center">
@@ -247,7 +228,8 @@ If 2 bins are actually one file and the other 2 have the same problems, maybe al
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes (more on that later). Let us see if this stays like that. 
 
 
-#### 5.5. Now on to the 4 CLUT files (what are they for?) 
+#### 4.5. What are the 4 CLUT files in world0.bmf and world1.bmf for?   
+
 There are 4 different palette files in world0.bmf and world1.bmf. These are the same palettes for both containers.  
 So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So, why does each bmf file contain the same 4 palette files, 1 seemingly unused and 2 palette files of unknown purpose?  
 
@@ -275,6 +257,27 @@ To be continued...
 
 
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe- 
+
+_________
+### 5. Results
+In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that are harder to get to. Some speculation on how to proceed from here. Advice and additional information is always welcome.
+
+#### 5.1. It is possible to obtain most many of the tileset's via a Python decompression script... 
+...excluding the terrain tiles, the font files and some others which get decompressed to *.bin files that contain unknown chunks of data. Feeding the TIM files into a TIM viewer gives you all the sprites, UI elements etc. in all palettes (or CLUTs as they are also called in PSX viewers). With Tim2View or Yu_Ri PSX file viewer/converter, they can be converted to PNGs or BMPs with or without transparency. For a full tileset you would have to make sure to also convert them in all the palettes. These tools unfortunately do not automatically do this. They also do not automatically export them into appropriately named subfolders but into one folder and seemingly randomly numbered files. The game logic most probably knows what to do with the numbering though. 
+#### 5.2. It is possible to obtain some terrain tiles from VRAM. 
+Using this method, it was not possible to find out the terrain tiles' correct order and position in the terrain data containers, or if we have all of them. Their correct palettes can be obtained manually in no$psx's VRAM debugger (see section 6.4) but maybe there is a more elegant route.
+#### 5.3. It is possible to decompress world0.bmf and world1.bmf into binary files consisting of terrain tile image data plus their palette information - but with problems
+The suspicious files from world0.bmf and world1.bmf were indeed the image data for terrain tiles and 4 files with palette information (so one .BMF file for Arcanus and one for Myror). The four bin with the image data can be combined to one file which fixes most of the graphical problems with them. We could match one palette file to Arcanus and one to Myror and suspect the other 2 palette files to be part of color cycling effects that are used by the game.
+
+
+The dumps from the PSX VRAM were not in vain since in theory they might be used to verify results using other methods such as palette file <-> data file pairs. 
+
+![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
+<b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
+
+
+
+
 
 
 <ins><b>!!!! Dear reader, the following part is obsolete. Please skip this part to section 6. We think we know the problem. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
