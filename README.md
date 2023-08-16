@@ -353,11 +353,11 @@ An array of sequential words was pasted onto that area editing the map to displa
 
 <b>Game shows a sequential number of tiles in the correct CLUTs in no$psx</b>  
 
-<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ed0047bc-3f44-4ffe-9589-73f75a75df8e" alt="drawing" width="550"/>   
+<img src="https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/69dcb982-8b02-4220-a2fa-b511ba615e85" alt="drawing" width="550"/>   
 
 <imgcaption><b>Same as injected tiles from above. In same order, but decompressed from world0.bmf datafiles</b></imgcaption>  
   
-The tiles displayed using the manipulated savestate are in the same order as they are stored in the *.tims within the worldx.bmf containers (see the 2 images above). Judging from these experiments, the game seems to use sequential numbering for the tiles in the worldx.bmf containers. The black area on position 00 in the decompressed terrain datafile occurs in the live game as well on position 00, so we can infer that these black areas may be intentional and are most probably not caused by the decompression script.  
+The tiles displayed using the manipulated savestate are in the same order as they are stored in the *.tims within the worldx.bmf containers (see the 2 images above). Judging from these experiments, the game seems to use sequential numbering for the tiles in the worldx.bmf containers. The black area on position 00 in the decompressed terrain datafile occurs in the live game as well on position 00, so we can infer that these black areas may be intentional and are most probably not caused by the decompression script. This also confirms that the game uses tiles from world1.bmf for Arcanus. 
 
 #### 6.3. Uncovering the fog of war/"visibility map"... 
 ...or had I known that earlier.
