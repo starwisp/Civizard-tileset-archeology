@@ -456,7 +456,7 @@ XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip th
 No$PSX Emulator/Debugger: https://problemkaputt.de/psx.htm  
 
 #### WIP 6.7. Palettes
-Palettes in Civizard are mostly used to show your flag color on your units or to to be able to used differently coloured fonts.
+Palettes in Civizard are used to show your flag color on your units or to to be able to used differently coloured fonts. Icons, buildings and battle screen tiles are also palettized.
 A special case are the terrain files. As discussed before, with when it comes to the terrain tiles, palettes are heavily used to optimize for the psx's comparatively limited resources in that you have one master file for the image data (the tiles, so to speak) of each, Arcanus and Myror. Depending on the chosen palette, different subsets of tiles "look correct". Palettes are also heavily used for colour cycling animations and other graphical effects.
 
 ![Palette 00000040 world0.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e702fb1a-058f-48c4-b68c-c597f5032546)  
