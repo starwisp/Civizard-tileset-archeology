@@ -454,6 +454,29 @@ Let us see if we find more in the future.
 Duckstation PSX Emulator: https://www.duckstation.org/  
 XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip through CLUTs): https://www.xnview.com  
 No$PSX Emulator/Debugger: https://problemkaputt.de/psx.htm  
+
+#### WIP 6.7. Palettes
+Palettes in Civizard are mostly used to show your flag color on your units or to to be able to used differently coloured fonts.
+A special case are the terrain files. As discussed before, with when it comes to the terrain tiles, palettes are heavily used to optimize for the psx's comparatively limited resources in that you have one master file for the image data (the tiles, so to speak) of each, Arcanus and Myror. Depending on the chosen palette, different subsets of tiles "look correct". Palettes are also heavily used for colour cycling animations and other graphical effects.
+
+![Palette 00000040 world0.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/e702fb1a-058f-48c4-b68c-c597f5032546)  
+<b>Palette 00000040 world0.bmf</b>  
+![Palette 00000572 world0.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/335bc467-d8b8-40a0-a831-09b6323ebe77)  
+<b>Palette 00000572 world0.bmf</b>  
+![Palette 00001104 world0.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/ada026f5-1d37-4aba-a7c6-4f2a4ed35a9f)  
+<b>Palette 00001104 world0.bmf</b>  
+![Palette 00009852 world0.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/1cf5f2c5-1d68-46cf-a026-e3cbf2ecfa77)  
+<b>Palette 00009852 world0.bmf</b>  
+![Palette 00000040 world1.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/afc473fc-a581-40dc-8ea1-d792a018803d)  
+<b>Palette 00000040 world1.bmf</b>  
+![Palette 00000572 world1.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/c151d78c-3282-4475-ad23-b91b3c8ffd31)  
+<b>Palette 00000572 world1.bmf</b>  
+![Palette 00001104 world1.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/9fc7f249-1951-450d-8309-a3c0d0bba9db)  
+<b>Palette 00001104 world1.bmf</b>  
+![Palette 00009852 world1.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0f7fc3cc-9cec-4b5f-8215-93ab461d9be9)  
+<b>Palette 00009852 world1.bmf</b>  
+
+
 _________
 ### Acknowledgments
 [vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
