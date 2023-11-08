@@ -225,10 +225,33 @@ If 2 bins are actually one file and the other 2 have the same problems, maybe al
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Myror tiles from world1.bmf; no "tearing"; mushroom forest tiles highlighted.</b>  
 
-So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes (more on that later). Let us see if this stays like that. 
+#### 4.5. Terrain tileset - patching and combining the script output files
 
+Unfortunately the script has a bug that stops it from extracting the terrain files in grph/world0 and grph/world1 and slices them im 4 files. So while they are extracted from their BMF containers, they are still compressed when combined with one of the palette files. This will be addressed in a later step below. 
 
-#### 4.5. What are the 4 CLUT files in world0.bmf and world1.bmf for?   
+![tiledggd-pe- tiles directly after script](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/6c4b2440-a0ed-489d-9781-03fe14a7c3c8)  
+<b>Extracted but still compressed terrain graphics data after script; united with palette file</b>  
+
+After using the script on the data files from the Civizard disk we end up with the following graphics data files in the output directory of GRPH/WORLD0 and GRPH/world1:  
+
+world0: 00010384.bin, 00067084.bin, 00114376.bin, 00150948.bin.  
+world1: 00010384.bin, 00068968.bin, 00119992.bin, 00162648.bin.  
+ 
+In order to be able to use them, we need to combine them into one file. This can be done with the command shell of your preferred OS.  
+
+Windows:  
+Open commandprompt/shell in the folder in question or navigate there.   
+Command for GRPH/WORLD0: copy /b 00010384.bin+00067084.bin+00114376.bin+00150948.bin compressedworld0.bin  
+
+Command for GRPH/WORLD1: copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin  
+
+Then we extract them in an extra step. Verwalkon was able to write a custom extractor for this step (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So we were able to just do a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus.  
+
+So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes/CLUTs (more on that later).
+
+LunarIPS: https://www.romhacking.net/utilities/240/  
+
+#### 4.6. What are the 4 CLUT files in world0.bmf and world1.bmf for?   
 
 There are 4 different palette files in world0.bmf and world1.bmf. These are the same palettes for both containers.  
 So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So, why does each bmf file contain the same 4 palette files, 1 seemingly unused and 2 palette files of unknown purpose?  
@@ -275,32 +298,6 @@ The dumps from the PSX VRAM were not in vain since in theory they might be used 
 ![Left decompressed terrain tiles vs. left dump from PSX VRAM](https://user-images.githubusercontent.com/81810020/175188859-014385ca-0cbb-4229-804f-cf895376d82a.JPG)  
 <b>Verification of decompressed tileset - left decompressed terrain tiles after decompression -one of many possible CLUTs, right dump from VRAM which also has the same tiles in different CLUTS but as sheets </b>   
 
-
-
-
-
-
-<ins><b>!!!! Dear reader, the following part is obsolete. Please skip this part to section 6. We think we know the problem. At this point this is only to keep track of different leads we are following right now and for ideas being bounced around.!!!!</b></ins> 
-#### Problems with the decompressed terrain tiles and further ideas WIP 
-+ find out why script cuts worldx.bmf tileset data into 4 large bin files.
-+ The names of the terrain tiles (or some kind of index by which they are called by the game) could not be retrieved with the decompression Python script since it only searches for graphics data. Maybe one could infer from Master of Magic's handling of tiles in its *.lbx container format. The "names" should be handled internally by the Civizard executable.  
-+ I suspect, you would also need a way to find out for every tile, in which palette it is used in the game. Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
-
-![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
-<b>Possible hints for the internal CLUT handling of the game</b>    
-  
-
-+ There were areas with no tiles/black areas in every terrain tileset (see picture below). I have no idea if these are supposed to be there or if they are some kind of corruption.
-+ Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we already started looking into the CLUT handling of the executable.
-
- ???? Known problems: delete later  - this is being worked on at the moment... for everyone just looking... WIP 
-Combining the suspected palette bin files with the larger graphics bin data files after they were generated by the Python script, showed something akin to terrain tiles but the result was still not correct.
-
-![tiledggd-pe- tiles directly after script](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/6c4b2440-a0ed-489d-9781-03fe14a7c3c8)  
-<b>Decompressed terrain graphics data after script; united with palette data</b>  
-
-Explanation:
-??? It turned out the Python script linked in this github repo cannot unpack the terrain tiles correctly. The script is an older version. The terrain textures here had some manual work put into them. The next version of the script is planned to be able to extract the terrain textures
 _________
 ### 6. Further experiments and ideas (may expand in time)
 #### 6.1. Alternative method: Getting terrain tiles, their names and CLUTs via savestate hex edit
@@ -499,3 +496,15 @@ _________
 + Color cycling information - GDC 2016 Talk "8 Bit & '8 Bitish' Graphics-Outside the Box" by Mark Ferrari https://www.youtube.com/watch?v=aMcJ1Jvtef0
 + Technical information on the tim format https://web.archive.org/web/20230702165945/https://rsync.irixnet.org/tutorials/pstutorials/chapter1/3-textures.html or http://lameguy64.net/tutorials/pstutorials/chapter1/3-textures.html
 + Visualized technical information on the tim format from 5:00 onward https://www.youtube.com/watch?v=Nq5rTECKb_w  
+
+
+TODO/further ideas:
++ find out why the script produces 4 specifically named bin files for the tiles of world0 and world1
++ Find the used palette for every tile and merge every group of "good tiles" into one file in the same order. This can be done manually by just comparing.
++ Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
++ There are 110 black/transparent tiles out of 880 tiles in the world0 and world1 tileset. They are there deliberately and are no error as can be seen in the sequential tiles injection test where they are present and can be called upon by calling them ingame via savestate editing. It would be interesting find out what they are for.
++ Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we already started looking into the CLUT handling of the executable.  
+![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
+<b>Possible hints for the internal CLUT handling of the game</b>       
+
+
