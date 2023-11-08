@@ -245,7 +245,7 @@ Command for GRPH/WORLD0: "copy /b 00010384.bin+00067084.bin+00114376.bin+0015094
 
 Command for GRPH/WORLD1: "copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin"  
 
-Then we extract them in an extra step. [vervalkon](https://github.com/vervalkon) was able to write a custom extractor for this step (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So we were able to just do a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus.  
+Then we extract them in an extra step. [vervalkon](https://github.com/vervalkon) was able to write a custom extractor for this step (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So we were able to just do a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus. Maybe I can come up with a more elegant solution here later ("LunarIPS" is normally not used in this context but works for this usecase).  
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes/CLUTs (more on that later).
 
@@ -274,7 +274,7 @@ Let's see if we can figure out how this works in Civizard. It may have something
 
 
 Some questions answered, more questions found.  
-This still involves manual steps, knowledge of PSX graphics, and the usage of "tiledggd-pe-" and other tools. Then there is the question why so far we only needed 2 of the 4 palette files and if these may be combined with the rest of the tileset graphics data to make them regular PSX *.tim graphics files that do not need 'TiledGGD'. This would make them easierto work with.
+This still involves manual steps, knowledge of PSX graphics, and the usage of "tiledggd-pe-" and other tools. Then there is the question why so far we only needed 2 of the 4 palette files and if these may be combined with the rest of the tileset graphics data to make them regular PSX *.tim graphics files that do not need 'TiledGGD'. This would make them easier to work with.
 
 To be continued...
 
