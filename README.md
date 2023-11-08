@@ -473,7 +473,7 @@ A special case are the terrain files. As discussed before, with when it comes to
 ![Palette 00009852 world1.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0f7fc3cc-9cec-4b5f-8215-93ab461d9be9)  
 <b>Palette 00009852 world1.bmf</b>  
 
-#### 7 TODO/further ideas/observations:
+#### 7. TODO/further ideas/observations:
 + Find out why the script produces 4 specifically named bin files for the tiles of world0 and world1, respectively.  
 + Find the used palette for every tile and merge every group of "good tiles" into one file in the same order. This can be done manually by just comparing.  
 + Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
