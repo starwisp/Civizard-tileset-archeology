@@ -241,11 +241,11 @@ In order to be able to use them, we need to combine them into one file. This can
 
 Windows:  
 Open commandprompt/shell in the folder in question or navigate there.   
-Command for GRPH/WORLD0: copy /b 00010384.bin+00067084.bin+00114376.bin+00150948.bin compressedworld0.bin  
+Command for GRPH/WORLD0: "copy /b 00010384.bin+00067084.bin+00114376.bin+00150948.bin compressedworld0.bin"  
 
-Command for GRPH/WORLD1: copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin  
+Command for GRPH/WORLD1: "copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin"  
 
-Then we extract them in an extra step. Verwalkon was able to write a custom extractor for this step (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So we were able to just do a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus.  
+Then we extract them in an extra step. [vervalkon](https://github.com/vervalkon) was able to write a custom extractor for this step (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So we were able to just do a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus.  
 
 So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes/CLUTs (more on that later).
 
