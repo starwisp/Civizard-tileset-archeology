@@ -452,7 +452,7 @@ Duckstation PSX Emulator: https://www.duckstation.org/
 XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip through CLUTs): https://www.xnview.com  
 No$PSX Emulator/Debugger: https://problemkaputt.de/psx.htm  
 
-#### WIP 6.7. Palettes
+#### 6.7. Palettes
 Palettes in Civizard are used to show your flag color on your units or to to be able to used differently coloured fonts. Icons, buildings and battle screen tiles are also palettized.
 A special case are the terrain files. As discussed before, with when it comes to the terrain tiles, palettes are heavily used to optimize for the psx's comparatively limited resources in that you have one master file for the image data (the tiles, so to speak) of each, Arcanus and Myror. Depending on the chosen palette, different subsets of tiles "look correct". Palettes are also heavily used for colour cycling animations and other graphical effects.
 
@@ -472,6 +472,15 @@ A special case are the terrain files. As discussed before, with when it comes to
 <b>Palette 00001104 world1.bmf</b>  
 ![Palette 00009852 world1.bmf](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/0f7fc3cc-9cec-4b5f-8215-93ab461d9be9)  
 <b>Palette 00009852 world1.bmf</b>  
+
+#### 7 TODO/further ideas/observations:
++ Find out why the script produces 4 specifically named bin files for the tiles of world0 and world1, respectively.  
++ Find the used palette for every tile and merge every group of "good tiles" into one file in the same order. This can be done manually by just comparing.  
++ Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
++ There are 110 black/transparent tiles out of 880 tiles in the world0 and world1 tileset. They are there deliberately and are no error as can be seen in the sequential tiles injection test where they are present and can be called upon by calling them ingame via savestate editing. It would be interesting find out what they are for.  
++ Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we already started looking into the CLUT handling of the executable.   
+![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
+<b>Possible hints for the internal CLUT handling of the game</b>       
 
 
 _________
@@ -496,15 +505,4 @@ _________
 + Color cycling information - GDC 2016 Talk "8 Bit & '8 Bitish' Graphics-Outside the Box" by Mark Ferrari https://www.youtube.com/watch?v=aMcJ1Jvtef0
 + Technical information on the tim format https://web.archive.org/web/20230702165945/https://rsync.irixnet.org/tutorials/pstutorials/chapter1/3-textures.html or http://lameguy64.net/tutorials/pstutorials/chapter1/3-textures.html
 + Visualized technical information on the tim format from 5:00 onward https://www.youtube.com/watch?v=Nq5rTECKb_w  
-
-
-TODO/further ideas:
-+ find out why the script produces 4 specifically named bin files for the tiles of world0 and world1
-+ Find the used palette for every tile and merge every group of "good tiles" into one file in the same order. This can be done manually by just comparing.
-+ Every terrain tile can be used in a multitude of palettes/CLUTS. All that is left is figuring out how the game assigns the correct CLUT/palette to the corresponding tiles and use this to get the correct CLUT/tile pairings.  
-+ There are 110 black/transparent tiles out of 880 tiles in the world0 and world1 tileset. They are there deliberately and are no error as can be seen in the sequential tiles injection test where they are present and can be called upon by calling them ingame via savestate editing. It would be interesting find out what they are for.
-+ Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we already started looking into the CLUT handling of the executable.  
-![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
-<b>Possible hints for the internal CLUT handling of the game</b>       
-
 
