@@ -227,7 +227,7 @@ If 2 bins are actually one file and the other 2 have the same problems, maybe al
 
 #### 4.5. Terrain tileset - patching and combining the script output files
 
-Unfortunately the script has a bug that stops it from extracting the terrain files in grph/world0 and grph/world1 and slices them im 4 files. So while they are extracted from their BMF containers, they are still compressed when combined with one of the palette files. This will be addressed in a later step below. 
+Unfortunately the script has a bug that stops it from extracting the terrain files in grph/world0 and grph/world1 and slices them im 4 files with numbered names that read like the game internal names of resource files in the other directories. So while they are extracted from their BMF containers, they are still compressed when combined with one of the palette files. This will be addressed in a later step below. 
 
 ![tiledggd-pe- tiles directly after script](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/6c4b2440-a0ed-489d-9781-03fe14a7c3c8)  
 <b>Extracted but still compressed terrain graphics data after script; united with palette file</b>  
