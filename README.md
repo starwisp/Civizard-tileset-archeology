@@ -240,7 +240,7 @@ world1: 00010384.bin, 00068968.bin, 00119992.bin, 00162648.bin.
 In order to be able to use them, we need to combine them into one file. This can be done with the command shell of your preferred OS.  
 
 Windows:  
-Open commandprompt/shell in the folder in question or navigate there.   
+Open command prompt/shell in the folder in question or navigate there.   
 Command for GRPH/WORLD0: "copy /b 00010384.bin+00067084.bin+00114376.bin+00150948.bin compressedworld0.bin"  
 
 Command for GRPH/WORLD1: "copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin"  
