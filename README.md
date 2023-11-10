@@ -277,7 +277,7 @@ Now we reduced the files from world0.bmf and world1.bmf each to one *.tim file f
 While there is still a lot of manual work involved, we found a way to extract the terrain tiles.  
   
 ![all x 1104 rivers](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8bbeb057-647e-4678-b1ce-8b7cdd06181b)
-<b>Screenshot of full tileset WORLD0.bmf/Arcanus in TiledGGD(PE) editor combined with palette file 00001104.bin; with correct palette for river tiles selected.</b>  
+<b>Screenshot of full tileset WORLD0.bmf/Arcanus in TiledGGD(PE) editor combined with palette file 00001104.bin; presumably with correct palette for river tiles selected; should be compared to ingame footage since there is more than one palette that fits here.</b>  
    
 ![mountains world1bmf palette 00001104](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/dcba4966-b98b-4c45-83d0-8cffa2ad3c31)
 <b>Screenshot of full tileset WORLD1.bmf/Myror in TiledGGD(PE) editor combined with palette file 00001104.bin; with correct palette for mountain tiles selected.</b>   
