@@ -225,7 +225,7 @@ If 2 bins are actually one file and the other 2 have the same problems, maybe al
 ![myror](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/52cb83ea-379f-4326-8c95-dc94d5496f1c)   
 <b>Myror tiles from world1.bmf; no "tearing"; mushroom forest tiles highlighted.</b>  
 
-#### 4.5. Terrain tileset - patching and combining the script output files
+#### 4.5. Terrain tileset part 3 - patching and combining the script output files
 
 Unfortunately the script has a bug that stops it from extracting the terrain files in grph/world0 and grph/world1 and slices them im 4 files with numbered names that read like the game internal names of resource files in the other directories. So while they are extracted from their BMF containers, they are still compressed when combined with one of the palette files. This will be addressed in a later step below. 
 
@@ -245,9 +245,7 @@ Command for GRPH/WORLD0: "copy /b 00010384.bin+00067084.bin+00114376.bin+0015094
 
 Command for GRPH/WORLD1: "copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin"  
 
-[vervalkon](https://github.com/vervalkon) was able to write a custom extractor for the 2 x 4 files from world0 and world1 (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk was created (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus. Maybe I can come up with a more elegant solution here later such as fixing the python script. "LunarIPS" is not normally used in this context but this method works fine for the moment.  
-
-So now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes/CLUTs (more on that later).
+[vervalkon](https://github.com/vervalkon) was able to write a custom extractor for the 2 x 4 files from world0 and world1 (hence the "bin.out" files in the images above), but it got lost. Luckily we still had the extracted files. So a binary difference patch from the compressed files to the extracted files for extracting the files from their original game disk was created (see IPS patches for world0 and world1 in this repo). The patch can be applied to its corresponding compressedworld0.bin or compressedworld1.bin using an IPS patcher like "LunarIPS" in order to decompress them. But beware, "LunarIPS" does not change directories automatically in its menus and thus makes it easy to combine the wrong patch and compressed tileset file. Also select "all files" in the menus. Maybe I can come up with a more elegant solution here later such as fixing the python script. "LunarIPS" is not normally used in this context but this method works fine for the moment. This leaves us with one file for the tiles minus palettes and landmarks for Arcanus and Myror, respectively. 
 
 LunarIPS: https://www.romhacking.net/utilities/240/  
 
@@ -273,14 +271,25 @@ This is the reason why in earlier stages of this project, tiles with animation p
 Let's see if we can figure out how this works in Civizard. It may have something to do with the extra palettes, but we cannot say for sure yet.  
 
 
+#### 4.7. world0.bmf and world1.bmf - terrain tiles extracted  
+
+Now we reduced the files from world0.bmf and world1.bmf each to one *.tim file for landmarks, one bin file for tiles and four bin files for palettes/CLUTs. 
+While there is still a lot of manual work involved, we found a way to extract the terrain tiles.  
+  
+![all x 1104 rivers](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/8bbeb057-647e-4678-b1ce-8b7cdd06181b)
+<b>Screenshot of full tileset WORLD0.bmf/Arcanus in TiledGGD(PE) editor combined with palette file 00001104.bin; with correct palette for river tiles selected.</b>  
+   
+![mountains world1bmf palette 00001104](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/dcba4966-b98b-4c45-83d0-8cffa2ad3c31)
+<b>Screenshot of full tileset WORLD1.bmf/Myror in TiledGGD(PE) editor combined with palette file 00001104.bin; with correct palette for mountain tiles selected.</b>   
+    
+This still involves many manual steps, knowledge of PSX graphics, and the usage of "tiledggd-pe-" and other tools. Then there is the question why so far we only needed 2 of the 4 palette files and if these may be combined with the rest of the tileset graphics data to make them regular PSX *.tim graphics files that do not need 'TiledGGD'. This would make them easier to work with.  
+  
 Some questions answered, more questions found.  
-This still involves manual steps, knowledge of PSX graphics, and the usage of "tiledggd-pe-" and other tools. Then there is the question why so far we only needed 2 of the 4 palette files and if these may be combined with the rest of the tileset graphics data to make them regular PSX *.tim graphics files that do not need 'TiledGGD'. This would make them easier to work with.
-
-To be continued...
-
-
-TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe- 
-
+  
+... to be continued?  
+  
+TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-  
+  
 _________
 ### 5. Results
 In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that are harder to get to. Some speculation on how to proceed from here. Advice and additional information is always welcome.
