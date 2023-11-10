@@ -251,11 +251,11 @@ LunarIPS: https://www.romhacking.net/utilities/240/
 
 #### 4.6. What are the 4 CLUT files in world0.bmf and world1.bmf for?   
 
-There are 4 different palette files in world0.bmf and world1.bmf. While they have the same names and look similar, some of them are NOT the same palettes for both containers.  
-So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin produces tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin is used to create tiles for Myror (with variations of brown, see last image of 5.4.). The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So, why does each bmf file contain the same 4 palette files, 1 seemingly unused and 2 palette files of unknown purpose?  
+There are 4 different palette files in world0.bmf and world1.bmf. While they have the same names and look similar, some of them are NOT the same palettes for both containers (see palette file 00001104.bin used in images in 4.7.).  
+So far I could determine in 'TiledGGD-pe-' that palette 00001104.bin of world0.bmf can produce tiles for Arcanus (with greens and blues, see last 2 images of 4.3.3.) and palette 0000040.bin of world1.bmf can be used to create tiles for Myror (with variations of brown, see last image of 5.4.), but also 00001104.bin ow world1.bmf can be used for brownish tiles. The terrain tiles from World0.bmf contain the highlighted green forest tiles that only look correct with a palette from 00001104.bin, so this is probably Arcanus. World1.bmf contains the highlighted mushroom forest tiles that only look correct with 0000040.bin, so this is probably Myror. So, why does each bmf file 2 palette files of unknown purpose and some palettes (= row of 16 colours in a palette files) with 3 seemingly out of place colours only?  
 
 The answer, we suspect, may lie in an interesting animation technique used in classic games. Many of these terrain tiles look muted compared to their in-game appearance. This is due to clever CLUT animations. The palettes if these terrain tiles get changed fast enough that it appears as an animation. But instead of different tiles as animation phases (such as with the monster tiles), it is the same tile but in different palettes. This, for example, leads to the shore wave animations or glow effects in Civizard. This technique is called color cycling. (see 'Example of color cycling' and link to Wikipedia entry on color cycling in "Further Information"). This way the game can change the muted colors of terrain tiles to an almost glowing effect. 
-In a way, there is no one true palette to get the ingame look of some of the tiles if the color cycling can not be replicated.  
+In a way, there is no one true palette to get the ingame look of some of the tiles if the color cycling can not be replicated. Curious is also, that there is an abundance of purple at areas of tiles where colour cycling is used ingame. 
 
 
 
@@ -267,7 +267,7 @@ https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/b4635be5-
 
 <imgcaption><b>Same shore tiles in the data files. Note the muted colors.</b></imgcaption>  
 
-This is the reason why in earlier stages of this project, tiles with animation phases of waves could be dumped from VRAM (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
+Colour cycling is the reason why in earlier stages of this project, tiles with animation phases of waves could be dumped from VRAM (see images end of section 3.1.2.), but later, these could not be found in the decompressed terrain files. "Retroarch beetle hw core" just dumps what is loaded into VRAM and in that case it was the same tile in different CLUTs.    
 Let's see if we can figure out how this works in Civizard. It may have something to do with the extra palettes, but we cannot say for sure yet.  
 
 
