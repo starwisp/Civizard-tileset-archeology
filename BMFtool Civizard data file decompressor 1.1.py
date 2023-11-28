@@ -1,6 +1,6 @@
 import sys, os
 
-#Put directories from root of your Civizard CD into c:/civizard.
+#Put directories from root of your Civizard CD into c:/civizard. -sw
 
 flist = ["COMB/COMBAT.BMF",
 "COMB/COMBAT0.BMF",
