@@ -8,7 +8,7 @@ tl;dr Civizard Tileset Extractor Usage...
 - recognized graphics data will be in the PSX image format *.tim. Use a *.tim viewer like XnViewMP or tim2view to view/export
 - most folders will contain sheets with animation phases, icons, wizard portraits and the like   
 - the terrain tileset data will be in c:\bmfout\grph\world0 and world1 
-- world0 and world1 will each contain a *.tim file for landmarks, one larger "compressedworld.bin" file for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
+- world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file ("compressedworld.bin") for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
 - download LunarIPS and download the IPS-patches in this repo (extract with 7zip)
 - apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
 - use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below)
