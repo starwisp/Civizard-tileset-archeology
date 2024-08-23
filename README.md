@@ -1,6 +1,6 @@
 Civizard Tileset Extractor Usage:
 - put all folders found in the root directory of your Civizard CD into C:\civizard
-- download and execute Python script from above  
+- download and execute Python script "BMFtool 1.1" from above  
 - The script will extract most of the contents of all *.bmf-files and put everything into a newly created c:\bmfout
 - most graphics data will be in the psx image format *.tim (use a *.tim editor like XnViewMP or tim2view to view/export)
 - most folders will contain sheets with animation phases, icons, wizard portraits, menues and the like   
