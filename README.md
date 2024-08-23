@@ -1,4 +1,4 @@
-Civizard Tileset Extractor Usage:
+TL;DR Civizard Tileset Extractor Usage:
 - put all folders found in the root directory of your Civizard CD into C:\civizard
 - download and execute Python script "BMFtool 1.1" from above  
 - the script will extract most of the contents of all *.bmf-files and put everything into a newly created c:\bmfout
