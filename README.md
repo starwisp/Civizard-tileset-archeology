@@ -1,13 +1,15 @@
-tl;dr Civizard Tileset Extractor Usage:
+tl;dr Civizard Tileset Extractor Usage...
+...though reading the document below is highly recommended for better unterstanding
+
 - put all folders found in the root directory of your Civizard CD into C:\civizard
 - download and execute Python script "BMFtool 1.1" from above  
-- the script will extract most of the contents of all *.bmf-files and put everything into a newly created c:\bmfout
-- most graphics data will be in the psx image format *.tim (use a *.tim editor like XnViewMP or tim2view to view/export)
+- the script will search for and extract graphics data in *.bmf-files and put into a newly created c:\bmfout
+- recognized graphics data will be in the PSX image format *.tim. Use a *.tim viewer like XnViewMP or tim2view to view/export
 - most folders will contain sheets with animation phases, icons, wizard portraits and the like   
-- the terrain files will be in c:\bmfout\grph\world0 and world1 
-- world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file for the terrain graphics data and four smaller *.bin files for its palettes/CLUTs
+- the terrain tileset data will be in c:\bmfout\grph\world0 and world1 
+- world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
 - download LunarIPS and download the IPS-patches in this repo (extract with 7zip)
-- apply IPS-patches to respective terrain graphics *.bin-file. 
+- apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
 - use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below)
 
 
