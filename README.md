@@ -6,7 +6,7 @@ Civizard Tileset Extractor Usage:
 - most folders will contain sheets with animation phases, icons, wizard portraits, menues and the like   
 - the terrain files will be in c:\bmfout\grph\world0 and world1 
 - world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file for the terrain graphics data and four smmaller *.bin files for its palettes/CLUTs
-- download lunarIPS and download the IPS-patches in this repo
+- download lunarIPS and download the IPS-patches in this repo (extract with 7zip)
 - apply IPS-patches to respective terrain graphics data bin-file. 
 - use TiledGGD-pe to combine graphics data an palette files (for correct settings read 4.3-4.7 below)
 
