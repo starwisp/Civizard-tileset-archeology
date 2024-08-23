@@ -1,3 +1,15 @@
+Civizard Tileset Extractor Usage:
+- put all folders found in the root directory of your Civizard CD into C:\civizard
+- download and execute Python script from above  
+- The script will extract most of the contents of all *.bmf-files and put everything into a newly created c:\bmfout
+- most graphics data will be in the psx image format *.tim (use a *.tim editor like XnViewMP or tim2view to view/export)
+- most folders will contain sheets with animation phases, icons, wizard portraits, menues and the like   
+- the terrain files will be in c:\bmfout\grph\world0 and world1 
+- world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file for the terrain graphics data and four smmaller *.bin files for its palettes/CLUTs
+- download lunarIPS and download the IPS-patches in this repo
+- apply IPS-patches to respective terrain graphics data bin-file. 
+- use TiledGGD-pe to combine graphics data an palette files (for correct settings read 4.3-4.7 below)
+
 # Civizard tileset archeology ...  
 ## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress).  
 Authors: [Starwisp](https://github.com/starwisp);
