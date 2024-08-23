@@ -1,4 +1,5 @@
 tl;dr Civizard Tileset Extractor Usage...
+
 ...though reading the document below is highly recommended for better unterstanding
 
 - put all folders found in the root directory of your Civizard CD into C:\civizard
