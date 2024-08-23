@@ -11,7 +11,7 @@ tl;dr Civizard Tileset Extractor Usage...
 - world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file ("compressedworld.bin") for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
 - download LunarIPS and download the IPS-patches in this repo (extract with 7zip)
 - apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
-- use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below)
+- use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics")
 
 
 # Civizard tileset archeology ...  
