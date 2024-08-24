@@ -1,4 +1,4 @@
-tl;dr Civizard Tileset Extractor Usage...
+**tl;dr Civizard Tileset Extractor Usage...**
 
 ...though reading the document below is highly recommended for better unterstanding
 
@@ -17,6 +17,7 @@ Tim2View (can easily flip through palettes): https://github.com/lab313ru/tim2vie
 XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip through palettes): https://www.xnview.com  
 LunarIPS: https://www.romhacking.net/utilities/240/    
 TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-  
+
 
 
 # Civizard tileset archeology ...  
