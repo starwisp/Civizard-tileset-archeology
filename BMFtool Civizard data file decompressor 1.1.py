@@ -424,9 +424,17 @@ for fidx in range(0, len(flist)):
 print('Creating terrain file WORLD0 (compressedworld0.bin).')
 os.chdir('/bmfout/GRPH/WORLD0')
 os.system('copy /b 00010384.bin+00067084.bin+00114376.bin+00150948.bin compressedworld0.bin')
+os.system('del 00010384.bin')
+os.system('del 00067084.bin')
+os.system('del 00114376.bin')
+os.system('del 00150948.bin')
 print('Creating terrain file WORLD1 (compressedworld1.bin).')
 os.chdir('/bmfout/GRPH/WORLD1')
 os.system('copy /b 00010384.bin+00068968.bin+00119992.bin+00162648.bin compressedworld1.bin')
+os.system('del 00010384.bin')
+os.system('del 00068968.bin')
+os.system('del 00119992.bin')
+os.system('del 00162648.bin')
 print('Done.')
 
 
