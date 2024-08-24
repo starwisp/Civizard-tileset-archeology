@@ -13,6 +13,11 @@ tl;dr Civizard Tileset Extractor Usage...
 - apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
 - use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics")
 
+Tim2View (can easily flip through palettes): https://github.com/lab313ru/tim2view/releases/tag/r90 
+XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip through palettes): https://www.xnview.com  
+LunarIPS: https://www.romhacking.net/utilities/240/    
+TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-  
+
 
 # Civizard tileset archeology ...  
 ## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress).  
@@ -29,7 +34,7 @@ Graphics data files in Civizard are in *.BMF containers with compressed and/or u
 At first, the *.BMF data files from Civizard were loaded into several TIM file viewers/converters, such as 'Tim2view' or 'Yu_Ri', and which are able to see and extract some game assets (such as the wizard portraits and spell icons). Unfortunately, many expected assets could not be found that way (e.g. the terrain tileset). The rest of the data files seemed to be unreadable, particularly WORLD0.BMF and WORLD1.BMF, in which we suspected the terrain tileset. So this method proved to be a dead end at first. 
 
 Tim2View: https://github.com/lab313ru/tim2view/releases/tag/r90   
-Yu_Ri: https://www.romhacking.net/utilities/133
+Yu_Ri: https://www.romhacking.net/utilities/133  
 _________
 ### 2. Examining the PSX VRAM
 We know that during normal play, the active tilesets of this game reside in VRAM. So if the graphics data cannot be accessed via the files, what about getting the tiles from VRAM?
