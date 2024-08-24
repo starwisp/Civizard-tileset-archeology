@@ -4,7 +4,7 @@
 
 - put all folders found in the root directory of your Civizard CD into C:\civizard
 - download and execute Python script "BMFtool 1.1" from above  
-- the script will search for and extract graphics data in *.bmf-files and put into a newly created c:\bmfout
+- the script will search for and extract graphics data in *.bmf-files and put it into an automatically created c:\bmfout
 - recognized graphics data will be in the PSX image format *.tim. Use a *.tim viewer like XnViewMP or tim2view to view/export
 - most folders will contain sheets with animation phases, icons, wizard portraits and the like   
 - the terrain tileset data will be in c:\bmfout\grph\world0 and world1 
