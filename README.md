@@ -1,4 +1,4 @@
-**tl;dr Civizard Tileset Extractor Usage...**
+**tl;dr Civizard Tileset Extraction...**
 
 ...though reading the document below is highly recommended for better unterstanding
 
