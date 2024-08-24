@@ -14,7 +14,7 @@
 - use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics")
 
 Tim2View (can easily flip through palettes): https://github.com/lab313ru/tim2view/releases/tag/r90  
-XnViewMP Image Viewer (tim files as thumbnails in folders; cannot easily flip through palettes): https://www.xnview.com  
+XnViewMP Image Viewer (shows *.tim files as thumbnails in folders, better for skimming through folders; cannot easily flip through palettes): https://www.xnview.com  
 LunarIPS: https://www.romhacking.net/utilities/240/    
 TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-  
 
