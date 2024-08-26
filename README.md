@@ -11,7 +11,7 @@
 - world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file ("compressedworld.bin") for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
 - download LunarIPS and download the IPS-patches in this repo (extract with 7zip)
 - apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
-- use TiledGGD-PE to combine graphics data and palette files (for correct settings read 4.3-4.7 below) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics")
+- use TiledGGD-PE to combine terrain graphics data (compressedworld.bin) and palette files (for correct settings read 4.3-4.7 below) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics"). Caveat: TiledGGD-PE may crash when entering these settings, especially after entering the tile dimensions. In case this happens, just try again until it works.
 
 Tim2View (can easily flip through palettes): https://github.com/lab313ru/tim2view/releases/tag/r90  
 XnViewMP Image Viewer (shows *.tim files as thumbnails in folders, better for skimming through folders; cannot easily flip through palettes): https://www.xnview.com  
