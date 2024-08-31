@@ -1,27 +1,5 @@
-**tl;dr Civizard Tileset Extraction...**
-
-...though reading the document below is highly recommended for better unterstanding
-
-- put all folders found in the root directory of your Civizard CD into C:\civizard
-- download and execute Python script "BMFtool 1.1" from above  
-- the script will search for and extract graphics data in *.bmf-files and put it into an automatically created c:\bmfout
-- recognized graphics data will be in the PSX image format *.tim. Use a *.tim viewer like XnViewMP or tim2view to view/export
-- most folders will contain sheets with animation phases, icons, wizard portraits and the like   
-- the terrain tileset data will be in c:\bmfout\grph\world0 and world1 
-- world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file ("compressedworld.bin") for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
-- download LunarIPS and download the IPS-patches in this repo (extract with 7zip)
-- apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
-- use TiledGGD-PE to combine terrain graphics data (compressedworld.bin) and palette files (for correct settings read 4.3-4.7 below) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics"). Caveat: TiledGGD-PE may crash when entering these settings, especially after entering the tile dimensions. In case this happens, just try again until it works.
-
-Tim2View (can easily flip through palettes): https://github.com/lab313ru/tim2view/releases/tag/r90  
-XnViewMP Image Viewer (shows *.tim files as thumbnails in folders, better for skimming through folders; cannot easily flip through palettes): https://www.xnview.com  
-LunarIPS: https://www.romhacking.net/utilities/240/    
-TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-  
-
-
-
 # Civizard tileset archeology ...  
-## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress).  
+## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX (Work In Progress, skip to paragraph 8 for TL;DR on usage of the script).  
 Authors: [Starwisp](https://github.com/starwisp);
 [vervalkon](https://github.com/vervalkon)
 
@@ -29,6 +7,7 @@ Authors: [Starwisp](https://github.com/starwisp);
 What makes Civizard an intriguing case is that Asmik put much work into this port. The most obvious things they changed are parts of the tileset, the camera viewpoint (tilted worldmap, almost isometric as opposed to the top-down view in MoM for DOS PC), and the UI/controls (adapted for using a PSX controller). 
 
 Civizard's distinctive terrain tileset makes it interesting to the Master of Magic modding community for use in Master of Magic mods. In this article I will describe different approaches and techniques that were attempted to get to the complete tileset including, most importantly, the terrain tiles. Fortunately, experts at the "DYKG / Do you know Gaming" Discord channel provided much advice and help. This is a summary I initially started writing for myself in order to document what was explained to me, what I tested out and what people helped me with, in case it may be of use to someone later. I hope there are not too many technical misunderstandings or mistakes.   
+
 _________
 ### 1. Extracting pictures from the *.BMF files via standard file viewers
 Graphics data files in Civizard are in *.BMF containers with compressed and/or uncompressed *.TIM graphics files inside. *.TIM files are a standard PSX picture format.  
@@ -514,8 +493,27 @@ A special case are the terrain files. As discussed before, with when it comes to
 + There are 110 black/transparent tiles out of 880 tiles in the world0 and world1 tileset. They are there deliberately and are no error as can be seen in the sequential tiles injection test where they are present and can be called upon by calling them ingame via savestate editing. It would be interesting find out what they are for.  
 + Unlike the other tiles in the Civizard data files, the extracted terrain tiles are separated from their palette information. Which image data file or even which single tile goes with which palette file and if some files use the same palette file will be guesswork since it seems to be handled internally by the game logic. But we already started looking into the CLUT handling of the executable.   
 ![CLUT handling of the game](https://github.com/starwisp/Civizard-tileset-archeology/assets/4465384/f7e220e6-1bdd-4ac3-bd9b-2e368912415b)  
-<b>Possible hints for the internal CLUT handling of the game</b>       
+<b>Possible hints for the internal CLUT handling of the game</b>        
 
+#### 8. TL;DR Civizard Tileset Extraction  
+
+...though reading the document above is highly recommended for better unterstanding
+
+- put all folders found in the root directory of your Civizard CD into C:\civizard
+- download and execute Python script "BMFtool 1.1" from above  
+- the script will search for and extract graphics data in *.bmf-files and put it into an automatically created c:\bmfout
+- recognized graphics data will be in the PSX image format *.tim. Use a *.tim viewer like XnViewMP or tim2view to view/export
+- most folders will contain sheets with animation phases, icons, wizard portraits and the like   
+- the terrain tileset data will be in c:\bmfout\grph\world0 and world1 
+- world0 and world1 will each contain a *.tim file for landmarks, one larger *.bin file ("compressedworld.bin") for the terrain tileset data and four smaller *.bin files for its palettes/CLUTs
+- download LunarIPS and download the IPS-patches in this repo (extract with 7zip)
+- apply IPS-patches to respective terrain tileset graphics data *.bin-file. 
+- use TiledGGD-PE to combine terrain graphics data (compressedworld.bin) and palette files (for correct settings read paragraphs 4.3 - 4.7 above) and save the tileset in the desired palette (TiledGGD-PE menu "save all graphics"). Caveat: TiledGGD-PE may crash when entering these settings, especially after entering the tile dimensions. In case this happens, just try again until it works.
+
+Tim2View (can easily flip through palettes): https://github.com/lab313ru/tim2view/releases/tag/r90  
+XnViewMP Image Viewer (shows *.tim files as thumbnails in folders, better for skimming through folders; cannot easily flip through palettes): https://www.xnview.com  
+LunarIPS: https://www.romhacking.net/utilities/240/    
+TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-  
 
 
 _________
