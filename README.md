@@ -516,6 +516,14 @@ XnViewMP Image Viewer (shows *.tim files as thumbnails in folders, better for sk
 LunarIPS: https://www.romhacking.net/utilities/240/    
 TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-  
 
+#### 9. Verification of tileset by comparing to ingame or video
+
+Each part of the terrain tile set (world0 and world1) has multiple possible palettes. Some only differ in a couple of colors. Finding the right palette for every tile without knowing the game's palette assignment logic is manual work.
+In order to make this easier we provide some help here with a memory card image of a 100 percent opened map and a video showing it in action.  
+
+![Overview of a game map with all the terrain tiles revealed](https://img.youtube.com/vi/TKQ9TX16uPI/0.jpg)](https://www.youtube.com/watch?v=TKQ9TX16uPI)  
+<b>Click on the video since embedding does not work in github readmes</b>
+
 
 _________
 ### Acknowledgments
