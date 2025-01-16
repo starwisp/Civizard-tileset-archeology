@@ -1,5 +1,5 @@
 # Civizard tileset archeology ...  
-## ... or possible methods for unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX  
+## ... or unearthing the tileset of 'Civizard - Majutsu no Keifu' for the PSX  
 (Work In Progress, skip to paragraph 8 for TL;DR on usage of the decompressor script).  
 Authors: [Starwisp](https://github.com/starwisp);
 [vervalkon](https://github.com/vervalkon)
