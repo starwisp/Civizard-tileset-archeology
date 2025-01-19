@@ -287,18 +287,18 @@ While there is still a lot of manual work involved, we found a way to extract th
 <b>Screenshot of full tileset WORLD1.bmf/Myror in TiledGGD(PE) editor combined with palette file 00001104.bin; with correct palette for mountain tiles selected.</b>   
     
 This still involves many manual steps, knowledge of PSX graphics, and the usage of "tiledggd-pe-" and other tools. Then there is the question why so far we only needed 2 of the 4 palette files and if these may be combined with the rest of the tileset graphics data to make them regular PSX *.tim graphics files that do not need 'TiledGGD'. This would make them easier to work with.  
-  
-Some questions answered, more questions found.  
-  
-... to be continued?  
-  
+   
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-  
 
-#### 4.8. Figuring out the right palettes for each subset of terrain tiles  
+#### 4.8. Palettes of the terrain tiles
+
+
+
+#### 4.9. Figuring out the right palettes for each subset of terrain tiles  
 There is one tile sheet for Arcanus and one tile sheet for Myrror. We noticed that the tiles are arranged by groups such as forest, river, shore, sea etc. . These groups usually look correct with the same palettes but most of the times only these and not the rest. Some time after releasing the script, method and results mod author Suppanut (Caster of Magic Warlord) got in contact and figured out how to find the right palette for each group of terrain tiles. With his permission I will now describe how he did it.
 Some CLUTs contain have several colors replaced by neon pink. This means the parts using these colors are transparent. So he exported that sheet and added alpha, then deleted the pina areas before overlapping that with a combined sheet. Then the correct group of tiles was visible. Doing that for every CLUT revealed the correct colors for every group of tiles of both worlds.   
 
-#### 4.8.1  
+#### 4.9.1  
 The resulting palettes are listed below. The code for the CLUT can be read in the CLUT area (top right) of TiledGGD-PE- and derives from the blocks of 16 colors that comprise one palette/CLUT. 
 
 CLUT file 1104:  
@@ -326,7 +326,7 @@ Seems to be a white flash effect. Might also be part of an overland spell animat
 
 With this information a full set of terrain tiles with correct CLUTS can be compiled.  
 
-#### 4.8.2
+#### 4.9.2
 After figuring out the correct palettes for the base set there was still the question of animated tiles such as shore tiles. 
 
 _________
