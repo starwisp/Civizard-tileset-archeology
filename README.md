@@ -293,7 +293,8 @@ Some questions answered, more questions found.
 ... to be continued?  
   
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-  
-  
+
+
 _________
 ### 5. Results
 In the following I will summarize what we have achieved so far. There are a few areas, especially the terrain tiles that are harder to get to. Some speculation on how to proceed from here. Advice and additional information is always welcome.
@@ -519,7 +520,7 @@ TiledGGD-PE-: https://github.com/puggsoy/tiledggd-pe-
 #### 9. Verification of tileset by comparing to ingame or video
 
 Each part of the terrain tile set (world0 and world1) has multiple possible palettes. Some only differ in a couple of colors. Finding the right palette for every tile without knowing the game's palette assignment logic is manual work.
-In order to make this easier we provide some help here with a memory card image of a 100 percent opened map and a video showing it in action.  
+In order to make this easier we provide some help here with a memory card image of a 100 percent opened map and a video showing it in action recorded with Duckstation.  
 
 ![Overview of a game map with all the terrain tiles revealed](https://img.youtube.com/vi/TKQ9TX16uPI/0.jpg)]  
 <b>https://www.youtube.com/watch?v=TKQ9TX16uPI</b>  
