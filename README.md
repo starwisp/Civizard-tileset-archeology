@@ -294,6 +294,40 @@ Some questions answered, more questions found.
   
 TiledGGD-PE- (with fixed endianness- endianness is swapped in regular TiledGGD): https://github.com/puggsoy/tiledggd-pe-  
 
+#### 4.8. Figuring out the right palettes for each subset of terrain tiles  
+There is one tile sheet for Arcanus and one tile sheet for Myrror. We noticed that the tiles are arranged by groups such as forest, river, shore, sea etc. . These groups usually look correct with the same palettes but most of the times only these and not the rest. Some time after releasing the script, method and results mod author Suppanut (Caster of Magic Warlord) got in contact and figured out how to find the right palette for each group of terrain tiles. With his permission I will now describe how he did it.
+Some CLUTs contain have several colors replaced by neon pink. This means the parts using these colors are transparent. So he exported that sheet and added alpha, then deleted the pina areas before overlapping that with a combined sheet. Then the correct group of tiles was visible. Doing that for every CLUT revealed the correct colors for every group of tiles of both worlds.   
+
+#### 4.8.1  
+The resulting palettes are listed below. The code for the CLUT can be read in the CLUT area (top right) of TiledGGD-PE- and derives from the blocks of 16 colors that comprise one palette/CLUT. 
+
+CLUT file 1104:  
+0x14 grassland  
+0x34 forest  
+0x54 swamp  
+0x74 hills  
+0x94 mountains  
+0xB4 sea  
+0xD4 river  
+0xF4 desert  
+0x114 tundra  
+0x134 volcano  
+
+CLUT file 40:  
+0xF4 chaos node  
+0x1B4 nature node  
+0x1D4 sorcery node  
+
+CLUT file 572:  
+Seems to be a reddish glow or fire effect. Might be part of an overland spell animation.  
+
+CLUT file 9852:  
+Seems to be a white flash effect. Might also be part of an overland spell animation.  
+
+With this information a full set of terrain tiles with correct CLUTS can be compiled.  
+
+#### 4.8.2
+After figuring out the correct palettes for the base set there was still the question of animated tiles such as shore tiles. 
 
 _________
 ### 5. Results
