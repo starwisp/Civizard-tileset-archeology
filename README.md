@@ -560,8 +560,8 @@ In order to make this easier we provide some help here with a memory card image 
 
 _________
 ### Acknowledgments
-[vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).
-Suppanut for figuring out the correct palettes for the terrain tiles and which palettes are used in terrain tileset color cycling animations. Also for his Caster of Magic for Windows Warlord mod which enhances the original Master of Magic with many more options. 
+[vervalkon](https://github.com/vervalkon) for his invaluable technical knowledge and for writing the extraction script in the repository, all the helpful people of the "DYKG / Do you know Gaming" Discord channel (@darkwolf, @R7CrazyCanucks, etc.),"Master of Magic Fans" Discord channel (@blakessanctum for coming up with the idea of using the Civizard tileset for Master of Magic, [jimbalcomb](https://github.com/jbalcomb) for technical information on Master of Magic).  
+Suppanut for figuring out the correct palettes for the terrain tiles and which palettes are used in terrain tileset color cycling animations. Also for his Caster of Magic for Windows Warlord mod which enhances the original Master of Magic with many more options.  
 _________
 ### Disclaimer 
 The contents of this repository are for educational use only. Use at your own risk. The game, all its game assets and the game's IP are properties of their respective owners / rights holders. Links are being provided as a convenience and for informational purposes only; they do not constitute an endorsement or an approval.
